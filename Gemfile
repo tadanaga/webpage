@@ -12,3 +12,5 @@ end
 
 gem 'kramdown'
 gem 'kramdown-parser-gfm'
+
+gem "tzinfo-data", "~> 1.2026"

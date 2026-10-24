@@ -16,9 +16,9 @@ behind them.
 As a Postdoctoral Fellow, I have taught the following courses
 since spring 2024:
 
-- **MATH 2531 — Calculus III**
-- **MATH 316 — Applied Ordinary Differential Equations**
-- **MATH/CS 375 — Introduction to Numerical Computing**
+- [**MATH 2531 — Calculus III**]({{ '/teaching/math-2531/' | relative_url }})
+- [**MATH 316 — Applied Ordinary Differential Equations**]({{ '/teaching/math-316/' | relative_url }})
+- [**MATH/CS 375 — Introduction to Numerical Computing**]({{ '/teaching/math-375/' | relative_url }})
 
 My courses use typed lecture notes and organized Canvas modules.
 I also use Desmos for visual exploration and MATLAB for

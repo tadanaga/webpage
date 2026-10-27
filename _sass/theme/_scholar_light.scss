@@ -1,0 +1,54 @@
+/* ==========================================================================
+   SCHOLAR THEME — LIGHT
+   Warm paper background, deep teal, and restrained amber accents.
+   ========================================================================== */
+
+$primary-color              : #176c73;
+$gray                       : #657b80;
+$dark-gray                  : #29414a;
+$darker-gray                : #1d3038;
+$light-gray                 : #b1bdbe;
+$lighter-gray               : #e8eeee;
+
+$danger-color               : #b64c44;
+$info-color                 : #176c73;
+$notice-color               : #c18a45;
+$success-color              : #397961;
+$warning-color              : #b47930;
+
+$border-radius              : 6px;
+$box-shadow                 : 0 1px 3px rgba(20, 52, 66, 0.10);
+$global-transition          : all 0.2s ease-in-out;
+$masthead-height            : 70px;
+$navicon-width              : 28px;
+$navicon-height             : 4px;
+$sidebar-link-max-width     : 250px;
+$sidebar-screen-min-width   : 1024px;
+
+:root {
+  --global-base-color                : #176c73;
+  --global-bg-color                  : #fbfaf6;
+  --global-footer-bg-color           : #153847;
+  --global-border-color              : #dbe8e5;
+  --global-dark-border-color         : #b8d0ca;
+  --global-code-background-color     : #f1f6f3;
+  --global-code-text-color           : #24555e;
+  --global-fig-caption-color         : #5a6e74;
+  --global-link-color                : #086977;
+  --global-link-color-hover          : #064e5a;
+  --global-link-color-visited        : #5a547d;
+  --global-masthead-link-color       : #f8f6ed;
+  --global-masthead-link-color-hover : #f3c88f;
+  --global-text-color                : #273d45;
+  --global-text-color-light          : #526b70;
+  --global-thead-color               : #e7f0eb;
+
+  --site-header-bg                   : #153847;
+  --site-heading-color               : #173f49;
+  --site-accent-color                : #c58b42;
+  --site-accent-soft                 : #f3e6d2;
+  --site-panel-color                 : #fffefb;
+  --site-footer-text                 : #e1ecec;
+  --site-wash-color                  : rgba(31, 125, 128, 0.08);
+  --site-outline-color               : #b17c32;
+}

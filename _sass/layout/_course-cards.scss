@@ -1,23 +1,25 @@
 /* ==========================================================================
-   COURSE LECTURE CARDS
-   Reusable for topic-based course pages. Illustrations are entirely optional.
+   COURSE TOPICS AND SEQUENTIAL LECTURE LIST
+   One illustration per topic; lecture links retain their original PDF paths.
    ========================================================================== */
 
+/* Compact links to the course topics. */
 .course-unit-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1.3rem 0 2.3rem;
+  gap: 0.42rem;
+  margin: 1.2rem 0 2.5rem;
 }
 
 .page__content .course-unit-nav a {
+  display: inline-block;
   background: var(--site-panel-color);
   color: var(--global-link-color);
   border: 1px solid var(--global-border-color);
-  border-radius: 100px;
-  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
   text-decoration: none;
-  font-size: 0.83rem;
+  font-size: 0.81rem;
   font-weight: 600;
   line-height: 1.45;
 }
@@ -29,91 +31,134 @@
   color: var(--site-heading-color);
 }
 
-.course-unit {
-  scroll-margin-top: 6.5rem;
-  margin: 2.3rem 0 2.75rem;
+/* The picture belongs to the topic, never to an individual lecture. */
+.course-topic {
+  scroll-margin-top: 6rem;
+  margin: 2.65rem 0 3.3rem;
 }
 
-.page__content .course-unit__title {
-  font-size: 1.2rem;
-  line-height: 1.4;
+.course-topic__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(160px, 220px);
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.course-topic__intro {
+  min-width: 0;
+}
+
+.page__content .course-topic__title {
   color: var(--site-heading-color);
-  margin: 0 0 1.1rem;
-  padding: 0.25rem 0 0.6rem 0.8rem;
+  font-size: 1.23rem;
+  line-height: 1.35;
+  margin: 0 0 0.8rem;
+  padding: 0.24rem 0 0.55rem 0.8rem;
   border-left: 4px solid var(--site-accent-color);
   border-bottom: 1px solid var(--global-border-color);
 }
 
-.lecture-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  align-items: stretch;
-  gap: 1rem;
-}
-
-.lecture-card {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  background: var(--site-panel-color);
-  border: 1px solid var(--global-border-color);
-  border-top: 3px solid var(--global-base-color);
-  border-radius: 9px;
-  overflow: hidden;
-  box-shadow: 0 3px 13px rgba(13, 52, 61, 0.045);
-}
-
-.lecture-card__figure {
+.page__content .course-topic__summary {
+  color: var(--global-text-color-light);
+  line-height: 1.6;
   margin: 0;
-  padding: 0.85rem 0.85rem 0;
+  font-size: 0.95rem;
 }
 
-.lecture-card__figure img {
+.course-topic__figure {
+  margin: 0;
+  width: 100%;
+  max-width: 220px; /* Provisional only — revisit when adding illustrations. */
+}
+
+.course-topic__figure img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 5px;
-  /* Intentionally no fixed height or aspect ratio: choose once images exist. */
+  border-radius: 7px;
+  border: 1px solid var(--global-border-color);
 }
 
-.lecture-card__body {
+.course-topic__placeholder {
   display: flex;
-  flex: 1;
   flex-direction: column;
-  padding: 1.1rem 1.2rem 1.15rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  width: 100%;
+  min-height: 120px;
+  background: var(--site-wash-color);
+  color: var(--global-text-color-light);
+  border: 1px dashed var(--global-dark-border-color);
+  border-radius: 7px;
+  text-align: center;
+  font-size: 0.87rem;
+  font-weight: 650;
 }
 
-.lecture-card__number {
-  display: block;
+.course-topic__placeholder small {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+/* Each lecture takes a full row. No two-column cards. */
+.lecture-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.58rem;
+}
+
+.lecture-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.15rem;
+  min-width: 0;
+  background: var(--site-panel-color);
+  border: 1px solid var(--global-border-color);
+  border-left: 3px solid var(--global-base-color);
+  border-radius: 7px;
+  padding: 0.95rem 1.1rem;
+}
+
+.lecture-row__content {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.lecture-row__number {
   color: var(--global-base-color);
-  font-size: 0.77rem;
+  font-size: 0.74rem;
   font-weight: 750;
-  letter-spacing: 0.075em;
+  letter-spacing: 0.065em;
   text-transform: uppercase;
 }
 
-.page__content .lecture-card__title {
+.page__content .lecture-row__title {
   color: var(--site-heading-color);
-  font-size: 1.07rem;
-  line-height: 1.4;
-  margin: 0.4rem 0 0.6rem;
-  overflow-wrap: break-word;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0.3rem 0 0.28rem;
+  overflow-wrap: anywhere;
 }
 
-.page__content .lecture-card__description {
+.page__content .lecture-row__description {
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--global-text-color-light);
-  font-size: 0.94rem;
-  line-height: 1.55;
-  margin: 0 0 1.15rem;
+  margin: 0;
 }
 
-.lecture-card__actions {
-  margin-top: auto;
+.lecture-row__actions {
+  flex: 0 0 auto;
+  align-self: center;
 }
 
-.page__content .lecture-card__pdf {
+.page__content .lecture-row__actions a {
   display: inline-block;
-  padding: 0.32rem 0.72rem;
+  padding: 0.36rem 0.7rem;
   border: 1px solid var(--global-border-color);
   border-radius: 5px;
   background: var(--site-accent-soft);
@@ -121,29 +166,38 @@
   text-decoration: none;
   font-size: 0.85rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
-.page__content .lecture-card__pdf:hover,
-.page__content .lecture-card__pdf:focus-visible {
+.page__content .lecture-row__actions a:hover,
+.page__content .lecture-row__actions a:focus-visible {
   background: var(--global-thead-color);
   border-color: var(--global-base-color);
   color: var(--global-link-color-hover);
 }
 
-@media (max-width: 600px) {
-  .lecture-grid {
-    gap: 0.75rem;
+@media (max-width: 680px) {
+  .course-topic__header {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
 
-  .lecture-card__body {
-    padding: 1rem;
+  .course-topic__figure {
+    max-width: 220px;
   }
 
-  .course-unit-nav {
-    gap: 0.4rem;
+  .course-topic__placeholder {
+    min-height: 105px;
+  }
+}
+
+@media (max-width: 430px) {
+  .lecture-row {
+    display: block;
+    padding: 0.85rem 0.95rem;
   }
 
-  .page__content .course-unit-nav a {
-    font-size: 0.8rem;
+  .lecture-row__actions {
+    margin-top: 0.75rem;
   }
 }

@@ -1,0 +1,149 @@
+/* ==========================================================================
+   COURSE LECTURE CARDS
+   Reusable for topic-based course pages. Illustrations are entirely optional.
+   ========================================================================== */
+
+.course-unit-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.3rem 0 2.3rem;
+}
+
+.page__content .course-unit-nav a {
+  background: var(--site-panel-color);
+  color: var(--global-link-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 100px;
+  padding: 0.35rem 0.8rem;
+  text-decoration: none;
+  font-size: 0.83rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.page__content .course-unit-nav a:hover,
+.page__content .course-unit-nav a:focus-visible {
+  background: var(--site-accent-soft);
+  border-color: var(--site-accent-color);
+  color: var(--site-heading-color);
+}
+
+.course-unit {
+  scroll-margin-top: 6.5rem;
+  margin: 2.3rem 0 2.75rem;
+}
+
+.page__content .course-unit__title {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--site-heading-color);
+  margin: 0 0 1.1rem;
+  padding: 0.25rem 0 0.6rem 0.8rem;
+  border-left: 4px solid var(--site-accent-color);
+  border-bottom: 1px solid var(--global-border-color);
+}
+
+.lecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.lecture-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--site-panel-color);
+  border: 1px solid var(--global-border-color);
+  border-top: 3px solid var(--global-base-color);
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 3px 13px rgba(13, 52, 61, 0.045);
+}
+
+.lecture-card__figure {
+  margin: 0;
+  padding: 0.85rem 0.85rem 0;
+}
+
+.lecture-card__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  /* Intentionally no fixed height or aspect ratio: choose once images exist. */
+}
+
+.lecture-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.1rem 1.2rem 1.15rem;
+}
+
+.lecture-card__number {
+  display: block;
+  color: var(--global-base-color);
+  font-size: 0.77rem;
+  font-weight: 750;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.page__content .lecture-card__title {
+  color: var(--site-heading-color);
+  font-size: 1.07rem;
+  line-height: 1.4;
+  margin: 0.4rem 0 0.6rem;
+  overflow-wrap: break-word;
+}
+
+.page__content .lecture-card__description {
+  color: var(--global-text-color-light);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  margin: 0 0 1.15rem;
+}
+
+.lecture-card__actions {
+  margin-top: auto;
+}
+
+.page__content .lecture-card__pdf {
+  display: inline-block;
+  padding: 0.32rem 0.72rem;
+  border: 1px solid var(--global-border-color);
+  border-radius: 5px;
+  background: var(--site-accent-soft);
+  color: var(--site-heading-color);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.page__content .lecture-card__pdf:hover,
+.page__content .lecture-card__pdf:focus-visible {
+  background: var(--global-thead-color);
+  border-color: var(--global-base-color);
+  color: var(--global-link-color-hover);
+}
+
+@media (max-width: 600px) {
+  .lecture-grid {
+    gap: 0.75rem;
+  }
+
+  .lecture-card__body {
+    padding: 1rem;
+  }
+
+  .course-unit-nav {
+    gap: 0.4rem;
+  }
+
+  .page__content .course-unit-nav a {
+    font-size: 0.8rem;
+  }
+}

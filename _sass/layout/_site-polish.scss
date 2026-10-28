@@ -4,6 +4,11 @@
    All palette choices live in the Scholar light/dark theme files.
    ========================================================================== */
 
+/* The site has no visible footer, so avoid the template's large bottom reserve. */
+body {
+  padding-bottom: 2.5rem;
+}
+
 /* A little depth without turning an academic site into a landing page. */
 body {
   background-image: radial-gradient(

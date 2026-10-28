@@ -18,12 +18,12 @@ layout: compress
 
     {{ content }}
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
+    {% comment %}
+    The AcademicPages demo footer (social feed, template credits, timestamp,
+    sitemap) is intentionally not rendered. Keep the custom footer include
+    for nonvisual dependencies such as MathJax.
+    {% endcomment %}
+    {% include footer/custom.html %}
 
     {% include scripts.html %}
 

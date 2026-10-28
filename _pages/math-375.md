@@ -11,34 +11,46 @@ An introduction to numerical methods and scientific computing, with computationa
 
 ## Curriculum and lecture slides
 
-Browse the lectures by topic. Each card includes a short description and a link to the slides; illustrations can be added individually as the materials evolve.
+Topics are listed in the order they are taught. Each topic includes its lectures, a short description, and space for one representative illustration.
 
-<nav class="course-unit-nav" aria-label="Jump to a course unit">
+<nav class="course-unit-nav" aria-label="Jump to a course topic">
   {% for unit in site.data.math375.units %}
-  <a href="#unit-{{ unit.number }}">{{ unit.number }}. {{ unit.short_title | escape }}</a>
+  <a href="#topic-{{ unit.number }}">{{ unit.number }}. {{ unit.short_title | escape }}</a>
   {% endfor %}
 </nav>
 
 {% for unit in site.data.math375.units %}
-<section class="course-unit" id="unit-{{ unit.number }}" aria-labelledby="unit-{{ unit.number }}-title">
-  <h3 id="unit-{{ unit.number }}-title" class="course-unit__title">{{ unit.number }}. {{ unit.title | escape }}</h3>
-  <div class="lecture-grid">
-    {% for lecture in unit.lectures %}
-    <article class="lecture-card">
-      {% if lecture.image %}
-      <figure class="lecture-card__figure">
-        <img src="{{ lecture.image | relative_url }}" alt="{{ lecture.image_alt | default: lecture.title | escape }}" loading="lazy">
-      </figure>
+<section class="course-topic" id="topic-{{ unit.number }}" aria-labelledby="topic-{{ unit.number }}-title">
+  <div class="course-topic__header">
+    <div class="course-topic__intro">
+      <h3 class="course-topic__title" id="topic-{{ unit.number }}-title">{{ unit.number }}. {{ unit.title | escape }}</h3>
+      <p class="course-topic__summary">{{ unit.summary | escape }}</p>
+    </div>
+
+    <figure class="course-topic__figure">
+      {% if unit.image %}
+      <img src="{{ unit.image | relative_url }}" alt="{{ unit.image_alt | default: unit.title | escape }}" loading="lazy">
+      {% else %}
+      <div class="course-topic__placeholder" role="note" aria-label="Illustration space reserved for {{ unit.title | escape }}">
+        <span>Topic illustration</span>
+        <small>To be added</small>
+      </div>
       {% endif %}
-      <div class="lecture-card__body">
-        <div class="lecture-card__number">Lecture {{ lecture.number | escape }}</div>
-        <h4 class="lecture-card__title">{{ lecture.title | escape }}</h4>
+    </figure>
+  </div>
+
+  <div class="lecture-list">
+    {% for lecture in unit.lectures %}
+    <article class="lecture-row">
+      <div class="lecture-row__content">
+        <div class="lecture-row__number">Lecture {{ lecture.number | escape }}</div>
+        <h4 class="lecture-row__title">{{ lecture.title | escape }}</h4>
         {% if lecture.description %}
-        <p class="lecture-card__description">{{ lecture.description | escape }}</p>
+        <p class="lecture-row__description">{{ lecture.description | escape }}</p>
         {% endif %}
-        <div class="lecture-card__actions">
-          <a class="lecture-card__pdf" href="{{ lecture.pdf | relative_url }}" aria-label="View PDF slides for Lecture {{ lecture.number | escape }}: {{ lecture.title | escape }}">View slides <span aria-hidden="true">↗</span></a>
-        </div>
+      </div>
+      <div class="lecture-row__actions">
+        <a href="{{ lecture.pdf | relative_url }}" aria-label="View PDF slides for Lecture {{ lecture.number | escape }}: {{ lecture.title | escape }}">View slides <span aria-hidden="true">↗</span></a>
       </div>
     </article>
     {% endfor %}

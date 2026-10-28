@@ -1,13 +1,15 @@
-# MATH/CS 375 curriculum and lecture cards.
-# Descriptions can be edited independently of the page layout.
-# To add an image later, add the following fields to any lecture:
-#   image: "/images/Math375/lecture00.png"
-#   image_alt: "An informative description of the illustration"
-# Image size and placement can be refined once artwork is available.
+# MATH/CS 375 curriculum.
+# Each topic has one optional illustration, placed beside its heading.
+# To add an image later, add these fields to a TOPIC (not a lecture):
+#     image: "/images/Math375/numerical-differentiation.png"
+#     image_alt: "Plot illustrating a numerical derivative approximation"
+# Adjust the illustration dimensions in _sass/layout/_course-cards.scss when ready.
+# Lecture titles, descriptions and PDF paths remain editable below.
 units:
   - number: 1
-    title: "Foundations of numerical computing"
+    title: "Numerical foundations"
     short_title: "Foundations"
+    summary: "Taylor approximations and the limitations of floating-point computation."
     lectures:
       - number: "00"
         title: "Course introduction"
@@ -26,8 +28,9 @@ units:
         description: "How rounding affects computations and the accuracy of numerical results."
         pdf: "/files/Math375/lecture02b.pdf"
   - number: 2
-    title: "Numerical differentiation and nonlinear equations"
-    short_title: "Nonlinear equations"
+    title: "Numerical differentiation"
+    short_title: "Differentiation"
+    summary: "Approximating derivatives and improving accuracy through extrapolation."
     lectures:
       - number: "03A"
         title: "Numerical differentiation"
@@ -37,6 +40,11 @@ units:
         title: "Extrapolation"
         description: "Using extrapolation to improve the accuracy of numerical approximations."
         pdf: "/files/Math375/lecture03b.pdf"
+  - number: 3
+    title: "Solving nonlinear equations"
+    short_title: "Nonlinear equations"
+    summary: "Finding roots numerically and comparing methods for solving nonlinear problems."
+    lectures:
       - number: "04A"
         title: "Nonlinear equations and the bisection method"
         description: "Finding solutions of nonlinear equations with bracket-based methods."
@@ -49,9 +57,10 @@ units:
         title: "Secant method"
         description: "Using the secant method to approximate roots without derivatives."
         pdf: "/files/Math375/lecture04c.pdf"
-  - number: 3
-    title: "Numerical linear algebra and linear systems"
-    short_title: "Linear systems"
+  - number: 4
+    title: "Direct methods for linear systems"
+    short_title: "Direct solvers"
+    summary: "Solving matrix equations using elimination and factorizations, with attention to computational cost and numerical stability."
     lectures:
       - number: "05A"
         title: "Linear algebra fundamentals"
@@ -81,6 +90,11 @@ units:
         title: "LDL and Cholesky factorizations"
         description: "Using matrix factorizations for symmetric linear systems."
         pdf: "/files/Math375/lecture07b.pdf"
+  - number: 5
+    title: "Iterative methods for linear systems"
+    short_title: "Iterative solvers"
+    summary: "Solving linear systems by repeated approximation, including methods that exploit sparse matrices."
+    lectures:
       - number: "08A"
         title: "Stationary iterative methods"
         description: "Approximating solutions of linear systems using repeated iterations."
@@ -93,9 +107,10 @@ units:
         title: "Iterative methods (continued)"
         description: "Further properties and applications of iterative methods."
         pdf: "/files/Math375/lecture08c.pdf"
-  - number: 4
-    title: "Interpolation and splines"
+  - number: 6
+    title: "Polynomial interpolation"
     short_title: "Interpolation"
+    summary: "Constructing interpolating polynomials and understanding the errors they introduce."
     lectures:
       - number: "09A"
         title: "Polynomial interpolation"
@@ -109,6 +124,11 @@ units:
         title: "Interpolation error"
         description: "Understanding how interpolation error depends on the data and method."
         pdf: "/files/Math375/lecture09c.pdf"
+  - number: 7
+    title: "Splines and data interpolation"
+    short_title: "Splines"
+    summary: "Using piecewise polynomials and MATLAB tools to interpolate and visualize data."
+    lectures:
       - number: "10A"
         title: "Splines"
         description: "Using piecewise polynomials to build smooth interpolants."
@@ -117,9 +137,10 @@ units:
         title: "Interpolation, splines, and data visualization in MATLAB"
         description: "Working with interpolation, splines, and three-dimensional data in MATLAB."
         pdf: "/files/Math375/lecture10b.pdf"
-  - number: 5
+  - number: 8
     title: "Numerical integration"
     short_title: "Integration"
+    summary: "Approximating integrals using Newton–Cotes formulas and Gaussian quadrature."
     lectures:
       - number: "11A"
         title: "Numerical integration"
@@ -137,9 +158,10 @@ units:
         title: "Generalized Gaussian quadrature"
         description: "Extending Gaussian quadrature to more general integration settings."
         pdf: "/files/Math375/lecture12b.pdf"
-  - number: 6
-    title: "Eigenvalue methods and least squares"
-    short_title: "Eigenvalues & least squares"
+  - number: 9
+    title: "Eigenvalue methods and Markov chains"
+    short_title: "Eigenvalues"
+    summary: "Computing eigenpairs and applying matrix methods to Markov chains."
     lectures:
       - number: "13A"
         title: "Power method"
@@ -149,6 +171,11 @@ units:
         title: "Markov chains"
         description: "Studying Markov chains through matrix-based computation."
         pdf: "/files/Math375/lecture13b.pdf"
+  - number: 10
+    title: "Least-squares approximation"
+    short_title: "Least squares"
+    summary: "Fitting models to data when an exact fit is unavailable or undesirable."
+    lectures:
       - number: "14A"
         title: "Least-squares methods"
         description: "Finding approximate models that fit more data than an exact system can."
@@ -157,9 +184,10 @@ units:
         title: "Least squares"
         description: "Solving and interpreting least-squares problems."
         pdf: "/files/Math375/lecture14b.pdf"
-  - number: 7
-    title: "Differential equations and simulation"
+  - number: 11
+    title: "Numerical methods for differential equations"
     short_title: "Differential equations"
+    summary: "Approximating solutions of initial-value problems with time-stepping schemes."
     lectures:
       - number: "15A"
         title: "Numerical methods for differential equations"
@@ -173,6 +201,11 @@ units:
         title: "Runge–Kutta methods"
         description: "Improving solution accuracy with Runge–Kutta time-stepping methods."
         pdf: "/files/Math375/lecture15c.pdf"
+  - number: 12
+    title: "Monte Carlo simulation"
+    short_title: "Monte Carlo"
+    summary: "Estimating quantities through random sampling and computational experiments."
+    lectures:
       - number: "16"
         title: "Monte Carlo methods"
         description: "Estimating quantities using random sampling and Monte Carlo simulation."

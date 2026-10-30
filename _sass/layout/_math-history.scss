@@ -21,7 +21,7 @@
 .math-history-track {
   position: relative;
   width: 2110px;
-  height: 445px;
+  height: 530px; /* Five lanes keep close birth years legible without overlapping. */
   padding: 0;
   background: repeating-linear-gradient(
     to right,

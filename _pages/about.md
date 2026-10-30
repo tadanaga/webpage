@@ -20,8 +20,4 @@ My research focuses on **numerical methods for partial differential equations**,
 
 For more information, see my [Research page]({{ '/portfolio/' | relative_url }}) and [Publications]({{ '/publications/' | relative_url }}).
 
-## Beyond mathematics
-
-Outside of work, I enjoy running, cooking, playing the ukulele, and studying Japanese.
-
 My [curriculum vitae (PDF)]({{ '/files/takahashi_cv.pdf' | relative_url }}) provides a fuller account of my education, teaching, research, and academic activities.

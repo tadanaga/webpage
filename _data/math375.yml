@@ -10,6 +10,7 @@ units:
     title: "Numerical foundations"
     short_title: "Foundations"
     summary: "Taylor approximations and the limitations of floating-point computation."
+    image: "/images/Math375/thumb1-taylor.svg"
     lectures:
       - number: "00"
         title: "Course introduction"

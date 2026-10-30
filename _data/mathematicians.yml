@@ -163,6 +163,16 @@ mathematicians:
     summary: "Runge developed numerical and graphical approaches to mathematics and helped shape methods for solving differential equations."
     lecture: "When introducing Runge–Kutta methods, motivate evaluating more than one slope within a step."
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Runge/"
+  - id: "markov"
+    name: "Andrey Markov"
+    birth: 1856
+    death: 1922
+    lane: 3
+    topic: "Markov chains and probability inequalities"
+    course: "Numerical Computing"
+    summary: "Markov pioneered the study of sequences of dependent random variables, now known as Markov chains. Markov's inequality also gives an upper bound on the probability of a large value using only a nonnegative random variable's expected value."
+    lecture: "While teaching Markov chains, mention that Markov studied sequences of vowels and consonants in Pushkin's poetry. Then distinguish chains, which model transitions between states, from Markov's inequality, which bounds tail probabilities."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Markov/"
   - id: "kutta"
     name: "Wilhelm Kutta"
     birth: 1867

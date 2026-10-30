@@ -189,14 +189,14 @@
   margin-bottom: 0.85rem;
 }
 
-.math-history-person__lecture {
+.math-history-person__fact {
   border-left: 3px solid var(--site-accent-color);
   background: var(--site-wash-color);
   padding: 0.75rem 0.9rem;
   border-radius: 0 6px 6px 0;
 }
 
-.math-history-person__lecture strong {
+.math-history-person__fact strong {
   display: block;
   font-size: 0.82rem;
   letter-spacing: 0.045em;
@@ -204,7 +204,7 @@
   margin-bottom: 0.35rem;
 }
 
-.page__content .math-history-person__lecture p {
+.page__content .math-history-person__fact p {
   margin-bottom: 0.5rem;
 }
 

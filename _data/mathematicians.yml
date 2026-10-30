@@ -123,6 +123,16 @@ mathematicians:
     summary: "Cauchy helped make calculus and analysis more systematic, with careful treatments of limits, series, and differential equations."
     fact: "As a child, Cauchy encountered Laplace and Lagrange, who visited his family's home. Lagrange reportedly encouraged his father to emphasize language studies before advanced mathematics."
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Cauchy/"
+  - id: "green"
+    name: "George Green"
+    birth: 1793
+    death: 1841
+    lane: 4
+    topic: "Green's theorem and potential theory"
+    course: "Calculus III · Differential Equations"
+    summary: "Green was a largely self-taught English mathematician whose work introduced Green's theorem and Green's functions, now central to vector calculus and the mathematical study of partial differential equations."
+    fact: "While working in his family's flour mill in Nottingham, Green taught himself advanced mathematics. His groundbreaking 1828 essay on electricity and magnetism was privately published with just 51 subscribers."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Green/"
   - id: "jacobi"
     name: "Carl Gustav Jacobi"
     birth: 1804
@@ -153,6 +163,16 @@ mathematicians:
     summary: "Riemann reshaped the foundations of integration and geometry, influencing calculus and later mathematical physics."
     fact: "According to a well-known biographical account, Riemann read a 900-page book on number theory by Legendre in just six days while he was still a schoolboy."
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/"
+  - id: "heaviside"
+    name: "Oliver Heaviside"
+    birth: 1850
+    death: 1925
+    lane: 2
+    topic: "Step functions and operational calculus"
+    course: "Differential Equations"
+    summary: "Heaviside developed operational calculus for analyzing electrical circuits, advanced vector analysis and electromagnetism, and gave his name to the Heaviside step function."
+    fact: "Heaviside left school at sixteen and worked as a telegraph operator. Fascinated by Maxwell's theory, he later left his job to study it full-time and helped reformulate Maxwell's original system into the four vector equations familiar today."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/"
   - id: "runge"
     name: "Carl Runge"
     birth: 1856

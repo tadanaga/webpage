@@ -7,7 +7,7 @@ author_profile: true
 
 Mathematical ideas have histories, and the names attached to theorems and algorithms belonged to real people. This growing timeline collects some of the mathematicians whose work appears in calculus, differential equations, and numerical computing.
 
-**Explore the timeline:** Scroll sideways through the years and select a name to open a short biography and a connection to something I teach. This is a selected collection, not a complete history of mathematics.
+**Explore the timeline:** Scroll sideways through the years and select a name to open a short biography and a historical anecdote relevant to my courses. This is a selected collection, not a complete history of mathematics.
 
 <div class="math-history-overview" role="region" tabindex="0" aria-label="Scrollable timeline of mathematicians, 1600 to 1950">
   <div class="math-history-track">
@@ -40,9 +40,9 @@ Mathematical ideas have histories, and the names attached to theorems and algori
   </summary>
   <div class="math-history-person__body">
     <p>{{ person.summary | escape }}</p>
-    <div class="math-history-person__lecture">
-      <strong>Lecture connection</strong>
-      <p>{{ person.lecture | escape }}</p>
+    <div class="math-history-person__fact">
+      <strong>Historical note</strong>
+      <p>{{ person.fact | escape }}</p>
       <span class="math-history-person__course">{{ person.course | escape }}</span>
     </div>
     <p class="math-history-person__reference"><a href="{{ person.source }}" target="_blank" rel="noopener noreferrer">Further reading: MacTutor History of Mathematics ↗</a></p>
@@ -50,7 +50,7 @@ Mathematical ideas have histories, and the names attached to theorems and algori
 </details>
 {% endfor %}
 
-<p class="math-history-note">Historical contributions are often shared across many people and eras; the connections here are teaching prompts, not claims of sole invention. For deeper biographical background, see the linked <a href="https://mathshistory.st-andrews.ac.uk/">MacTutor History of Mathematics Archive</a>. The interactive <a href="https://mathigon.org/timeline">Mathigon Timeline of Mathematics</a> also inspired this page.</p>
+<p class="math-history-note">Historical contributions are often shared across many people and eras; the historical notes are starting points for classroom stories, not claims of sole invention. For deeper biographical background, see the linked <a href="https://mathshistory.st-andrews.ac.uk/">MacTutor History of Mathematics Archive</a>. The interactive <a href="https://mathigon.org/timeline">Mathigon Timeline of Mathematics</a> also inspired this page.</p>
 
 <script>
 (function () {

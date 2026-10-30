@@ -11,6 +11,7 @@ units:
     short_title: "Foundations"
     summary: "Taylor approximations and the limitations of floating-point computation."
     image: "/images/Math375/thumb1-taylor.svg"
+    image_alt: "Three curves showing the exponential function and two Taylor polynomial approximations."
     lectures:
       - number: "00"
         title: "Course introduction"

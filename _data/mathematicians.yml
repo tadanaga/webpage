@@ -1,0 +1,195 @@
+# Selected mathematicians connected to courses in calculus, differential equations,
+# and numerical computing. Birth/death years are in the Gregorian calendar where applicable.
+# Each entry links to a scholarly biographical reference; add new entries here.
+# lane controls the vertical placement of a label in the scrollable overview.
+mathematicians:
+  - id: "descartes"
+    name: "René Descartes"
+    birth: 1596
+    death: 1650
+    lane: 0
+    topic: "Analytic geometry"
+    course: "Calculus III"
+    summary: "Descartes helped establish analytic geometry, connecting geometric problems with algebra and coordinates."
+    lecture: "When introducing three-dimensional coordinates, ask how geometry changes once points are represented by numbers."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Descartes/"
+  - id: "newton"
+    name: "Isaac Newton"
+    birth: 1643
+    death: 1727
+    lane: 0
+    topic: "Calculus and mechanics"
+    course: "Calculus · Differential Equations"
+    summary: "Newton developed foundational ideas in calculus and mathematical physics, describing motion and gravitation through mathematical laws."
+    lecture: "When deriving a spring–mass equation, connect force and acceleration through Newton's laws. His birth year is sometimes given as 1642 because of differing calendars."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Newton/"
+  - id: "leibniz"
+    name: "G. W. Leibniz"
+    birth: 1646
+    death: 1716
+    lane: 1
+    topic: "Calculus notation"
+    course: "Calculus"
+    summary: "Leibniz independently developed calculus and introduced influential notation, including the integral sign and differentials."
+    lecture: "Compare Leibniz's dy/dx notation with Newton's dot notation for time derivatives."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Leibniz/"
+  - id: "bernoulli"
+    name: "Jacob Bernoulli"
+    birth: 1655
+    death: 1705
+    lane: 2
+    topic: "Differential equations and probability"
+    course: "Differential Equations"
+    summary: "Jacob Bernoulli contributed to early calculus, differential equations, and probability; several members of his family made major mathematical discoveries."
+    lecture: "Introduce Bernoulli equations while discussing the historical development of techniques for first-order differential equations."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli/"
+  - id: "taylor"
+    name: "Brook Taylor"
+    birth: 1685
+    death: 1731
+    lane: 0
+    topic: "Taylor series"
+    course: "Numerical Computing"
+    summary: "Taylor's work on series expansions became central to approximation and the analysis of numerical errors."
+    lecture: "When teaching truncation error, use a Taylor polynomial to explain why a numerical formula works and where it fails."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Taylor/"
+  - id: "euler"
+    name: "Leonhard Euler"
+    birth: 1707
+    death: 1783
+    lane: 1
+    topic: "Analysis and Euler's method"
+    course: "Differential Equations · Numerical Computing"
+    summary: "Euler made foundational contributions to analysis, mechanics, number theory, and the notation of modern mathematics."
+    lecture: "Use Euler's method to ask why stepping along the local slope introduces an error that accumulates."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Euler/"
+  - id: "lagrange"
+    name: "Joseph-Louis Lagrange"
+    birth: 1736
+    death: 1813
+    lane: 0
+    topic: "Interpolation and mechanics"
+    course: "Numerical Computing"
+    summary: "Lagrange developed ideas in mathematical mechanics and made broad contributions to analysis, approximation, and differential equations."
+    lecture: "Use Lagrange interpolation to show how basis polynomials can reproduce any supplied data values."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Lagrange/"
+  - id: "laplace"
+    name: "Pierre-Simon Laplace"
+    birth: 1749
+    death: 1827
+    lane: 1
+    topic: "Transforms and probability"
+    course: "Differential Equations"
+    summary: "Laplace advanced celestial mechanics and probability; the integral transform bearing his name is now central to differential equations."
+    lecture: "Show how Laplace transforms turn a differential equation into an algebraic equation while incorporating initial conditions."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Laplace/"
+  - id: "fourier"
+    name: "Joseph Fourier"
+    birth: 1768
+    death: 1830
+    lane: 0
+    topic: "Heat flow and series"
+    course: "Differential Equations"
+    summary: "Fourier studied heat conduction and the representation of functions by sums of trigonometric waves."
+    lecture: "Mention heat flow or vibrating strings when explaining why sine and cosine functions are useful building blocks."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
+  - id: "germain"
+    name: "Sophie Germain"
+    birth: 1776
+    death: 1831
+    lane: 2
+    topic: "Elasticity and number theory"
+    course: "Differential Equations"
+    summary: "Germain made significant contributions to elasticity and number theory despite substantial barriers to formal mathematics education."
+    lecture: "After a spring–mass example, connect simple oscillations to the more complicated vibration of elastic plates."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Germain/"
+  - id: "gauss"
+    name: "Carl Friedrich Gauss"
+    birth: 1777
+    death: 1855
+    lane: 3
+    topic: "Quadrature and least squares"
+    course: "Numerical Computing"
+    summary: "Gauss worked across number theory, astronomy, statistics, and computational mathematics; Gaussian quadrature and least squares remain fundamental tools."
+    lecture: "Compare Gaussian quadrature with equally spaced Newton–Cotes rules. The famous classroom story about summing 1 through 100 is best presented as an anecdote."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
+  - id: "cauchy"
+    name: "Augustin-Louis Cauchy"
+    birth: 1789
+    death: 1857
+    lane: 1
+    topic: "Limits and rigorous analysis"
+    course: "Calculus · Differential Equations"
+    summary: "Cauchy helped make calculus and analysis more systematic, with careful treatments of limits, series, and differential equations."
+    lecture: "When discussing existence and uniqueness for initial-value problems, explain why assumptions and precise definitions matter."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Cauchy/"
+  - id: "jacobi"
+    name: "Carl Gustav Jacobi"
+    birth: 1804
+    death: 1851
+    lane: 0
+    topic: "Matrix iterations"
+    course: "Numerical Computing"
+    summary: "Jacobi contributed extensively to analysis and mathematical physics; his name also appears in iterative linear-system solvers."
+    lecture: "Compare a Jacobi update, which uses the previous iterate, with a Gauss–Seidel update that uses newly computed components."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/"
+  - id: "lovelace"
+    name: "Ada Lovelace"
+    birth: 1815
+    death: 1852
+    lane: 2
+    topic: "Algorithms and computing"
+    course: "Numerical Computing"
+    summary: "Lovelace wrote influential notes about Charles Babbage's proposed Analytical Engine, including an algorithm for computing Bernoulli numbers."
+    lecture: "Ask students to distinguish a mathematical formula from an explicit algorithm a machine can execute."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Lovelace/"
+  - id: "riemann"
+    name: "Bernhard Riemann"
+    birth: 1826
+    death: 1866
+    lane: 1
+    topic: "Integration and geometry"
+    course: "Calculus III"
+    summary: "Riemann reshaped the foundations of integration and geometry, influencing calculus and later mathematical physics."
+    lecture: "When introducing double and triple integrals, build the idea from sums over small pieces of a region."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Riemann/"
+  - id: "runge"
+    name: "Carl Runge"
+    birth: 1856
+    death: 1927
+    lane: 0
+    topic: "Numerical differential equations"
+    course: "Numerical Computing"
+    summary: "Runge developed numerical and graphical approaches to mathematics and helped shape methods for solving differential equations."
+    lecture: "When introducing Runge–Kutta methods, motivate evaluating more than one slope within a step."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Runge/"
+  - id: "kutta"
+    name: "Wilhelm Kutta"
+    birth: 1867
+    death: 1944
+    lane: 1
+    topic: "Runge–Kutta methods"
+    course: "Numerical Computing"
+    summary: "Kutta advanced numerical methods for ordinary differential equations; his name survives in Runge–Kutta schemes."
+    lecture: "Ask why combining several slope estimates can outperform a single forward Euler step."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Kutta/"
+  - id: "noether"
+    name: "Emmy Noether"
+    birth: 1882
+    death: 1935
+    lane: 2
+    topic: "Symmetry and conservation"
+    course: "Differential Equations"
+    summary: "Noether transformed modern algebra and uncovered a fundamental relationship between continuous symmetries and conservation laws."
+    lecture: "In mechanics, point out that a symmetry can explain why certain quantities stay constant along a solution."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Noether/"
+  - id: "turing"
+    name: "Alan Turing"
+    birth: 1912
+    death: 1954
+    lane: 0
+    topic: "The foundations of computation"
+    course: "Numerical Computing"
+    summary: "Turing helped establish the theoretical foundations of computation and contributed to wartime codebreaking."
+    lecture: "In numerical computing, contrast whether a problem can be computed at all with how accurately and efficiently to compute it."
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Turing/"

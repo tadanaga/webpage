@@ -1,0 +1,17 @@
+{% comment %}
+A brief, semester-independent schedule, generated from the same topic groups as the
+lecture-materials cards. Example: {% include course-general-schedule.html units=site.data.math375.units %}
+{% endcomment %}
+<table class="course-general-schedule">
+  <thead>
+    <tr><th scope="col">Order</th><th scope="col">Topic</th></tr>
+  </thead>
+  <tbody>
+    {% for unit in include.units %}
+    <tr>
+      <td>{{ unit.number }}</td>
+      <td><a href="#topic-{{ unit.number }}">{{ unit.title | escape }}</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

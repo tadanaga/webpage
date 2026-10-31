@@ -16,12 +16,14 @@ Mathematical ideas have histories, and the names attached to theorems and algori
       <span class="math-history-tick" style="left: {{ offset }}px;" aria-hidden="true">{{ tick }}</span>
     {% endfor %}
     {% for person in site.data.mathematicians.mathematicians %}
+    {% unless person.hidden %}
       {% assign x = person.birth | minus: 1580 | times: 5 %}
       {% assign y = person.lane | times: 78 | plus: 125 %}
       <a class="math-history-marker" style="left: {{ x }}px; top: {{ y }}px;" href="#historical-{{ person.id }}" aria-label="{{ person.name | escape }}, born {{ person.birth }}; read about {{ person.topic | escape }}">
         <span class="math-history-marker__year">{{ person.birth }}</span>
         <span class="math-history-marker__name">{{ person.name | escape }}</span>
       </a>
+    {% endunless %}
     {% endfor %}
   </div>
 </div>
@@ -30,6 +32,7 @@ Mathematical ideas have histories, and the names attached to theorems and algori
 ## People and ideas
 
 {% for person in site.data.mathematicians.mathematicians %}
+    {% unless person.hidden %}
 <details class="math-history-person" id="historical-{{ person.id }}">
   <summary class="math-history-person__summary">
     <span class="math-history-person__dates">{{ person.birth }}–{{ person.death }}</span>
@@ -43,9 +46,20 @@ Mathematical ideas have histories, and the names attached to theorems and algori
       <p>{{ person.fact | escape }}</p>
       <span class="math-history-person__course">{{ person.course | escape }}</span>
     </div>
+    {% if person.links %}
+    <div class="math-history-person__links">
+      <strong>Related topics</strong>
+      <ul>
+        {% for link in person.links %}
+        <li><a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.label | escape }} ↗</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
     <p class="math-history-person__reference"><a href="{{ person.source }}" target="_blank" rel="noopener noreferrer">Further reading: MacTutor History of Mathematics ↗</a></p>
   </div>
 </details>
+{% endunless %}
 {% endfor %}
 
 <p class="math-history-note">Historical contributions are often shared across many people and eras; the historical notes are starting points for classroom stories, not claims of sole invention. For deeper biographical background, see the linked <a href="https://mathshistory.st-andrews.ac.uk/">MacTutor History of Mathematics Archive</a>. The interactive <a href="https://mathigon.org/timeline">Mathigon Timeline of Mathematics</a> also inspired this page.</p>

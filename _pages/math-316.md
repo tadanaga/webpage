@@ -5,59 +5,76 @@ permalink: /teaching/math-316/
 author_profile: true
 ---
 
-**University of New Mexico**
+**University of New Mexico · 3 credit hours**
 
-An introduction to ordinary differential equations, their solution methods, and applications in the physical and natural sciences.
+An introduction to ordinary differential equations, their analytical solutions, and models of phenomena in the physical and natural sciences.
 
-## Curriculum and lecture notes
+This is a **semester-independent course overview**. Official meeting times, assessment details, and policies are specified separately for each offering.
 
-The course is organized by chapter and topic rather than by class meeting. The order and emphasis may vary from semester to semester. Linked topics have lecture notes available as PDFs.
+<nav class="course-unit-nav" aria-label="On this page">
+  <a href="#syllabus">Syllabus</a>
+  <a href="#course-schedule">General schedule</a>
+  <a href="#lecture-materials">Lecture materials</a>
+</nav>
 
-### Chapter 1. First-order differential equations
+<h2 id="syllabus">Course syllabus</h2>
 
-- **1.1** [Introduction to first-order differential equations]({{ '/files/Math316/1.1-first-order.pdf' | relative_url }})
-- **1.2** [Solutions and direction fields]({{ '/files/Math316/1.2-solutions.pdf' | relative_url }})
-- **1.3** [Separation of variables]({{ '/files/Math316/1.3-separation.pdf' | relative_url }})
-- **1.4** [Linear equations and integrating factors]({{ '/files/Math316/1.4-linear-equations.pdf' | relative_url }})
-- **1.5** [Applications of first-order equations]({{ '/files/Math316/1.5-applications.pdf' | relative_url }})
-- **1.6** [Autonomous equations and stability]({{ '/files/Math316/1.6-autonomous.pdf' | relative_url }})
-- **1.7** [Population models]({{ '/files/Math316/1.7-population.pdf' | relative_url }})
-- **1.8** [Existence and uniqueness]({{ '/files/Math316/1.8-existence-uniqueness.pdf' | relative_url }})
+### 1. Course information
 
-### Chapter 2. Second-order linear differential equations
+**Course:** MATH 316 — Applied Ordinary Differential Equations  
+**Institution:** University of New Mexico  
+**Credits:** 3  
+**Instruction:** Lecture-based course with applications, worked examples, and problem solving.
 
-- **2.1** [Spring–mass models]({{ '/files/Math316/2.1-spring-model.pdf' | relative_url }})
-- **2.2** [Distinct real characteristic roots]({{ '/files/Math316/2.2-distinct-roots.pdf' | relative_url }})
-- **2.3** [Repeated characteristic roots]({{ '/files/Math316/2.3-repeated-roots.pdf' | relative_url }})
-- **2.4** [Complex characteristic roots]({{ '/files/Math316/2.4-complex-roots.pdf' | relative_url }})
-- **2.5** [Unforced spring–mass systems]({{ '/files/Math316/2.5-unforced-spings.pdf' | relative_url }})
-- **2.6** [Method of undetermined coefficients]({{ '/files/Math316/2.6-mouc.pdf' | relative_url }})
-- **2.7** [Forced spring–mass systems]({{ '/files/Math316/2.7-forced-springs.pdf' | relative_url }})
+The course emphasizes how differential equations arise from models, how their solutions are constructed, and how solution behavior can be understood qualitatively.
 
-### Chapter 3. Laplace transforms
+### 2. Learning objectives
 
-- **3.1** [Definition and basic properties of the Laplace transform]({{ '/files/Math316/3.1-definition.pdf' | relative_url }})
-- **3.2** [Solving initial-value problems]({{ '/files/Math316/3.2-solving-ivps.pdf' | relative_url }})
-- **3.3** [Shift theorems]({{ '/files/Math316/3.3-shift.pdf' | relative_url }})
-- **3.4** [Heaviside step function]({{ '/files/Math316/3.4-heaviside.pdf' | relative_url }})
-- **3.5** [Piecewise forcing]({{ '/files/Math316/3.5-pw-forcing.pdf' | relative_url }})
-- **3.6** [Impulse forces]({{ '/files/Math316/3.6-impulse.pdf' | relative_url }})
+By the end of the course, students should be able to:
 
-### Chapter 4. Linear systems of differential equations
+- Recognize and solve separable and first-order linear differential equations.
+- Interpret direction fields, equilibria, autonomous equations, and stability.
+- Construct and analyze simple mathematical models, including population and spring–mass systems.
+- Solve second-order linear equations using characteristic roots and undetermined coefficients.
+- Use Laplace transforms to solve initial-value problems with continuous, piecewise, and impulsive forcing.
+- Solve two-dimensional linear systems using eigenvalues and eigenvectors, and sketch phase portraits.
+- Analyze equilibria and local behavior in selected nonlinear systems.
 
-- Review of matrices and linear systems
-- Vector-valued functions, derivatives, and trajectories
-- Systems of the form \(\mathbf{x}' = A\mathbf{x}\)
-- Eigenvalues, eigenvectors, and solutions to linear systems
-- Phase portraits: saddles, nodes, spirals, and centers
-- Repeated and zero eigenvalues
+### 3. Course materials and prerequisites
 
-### Chapter 5. Nonlinear systems and applications
+**Prerequisite:** MATH 1522 (Calculus II). Calculus III may be taken before or concurrently, subject to the current UNM course requirements.
 
-- Converting second-order equations into first-order systems
-- Equilibria and linearization
-- Competing-species models
-- Lotka–Volterra predator–prey model
-- Nonlinear mechanics and the pendulum
+**Textbook:** J. David Logan, *A First Course in Differential Equations*, 3rd edition (textbook from a recent coordinated offering).
+
+**Software:** MATLAB may be used for numerical experiments and visualizations; see the current course instructions for required computing work.
+
+**Course resources:** Notes, weekly assignments, announcements, and grades are distributed through UNM Canvas for each semester.
+
+### 4. Assessment and grading
+
+The following is a **representative grading breakdown from the Fall 2026 coordinated course**, not a promise that future offerings will use the same weights.
+
+| Assessment | Weight |
+|:--|--:|
+| Weekly homework | 14% |
+| Instructor discretion / participation | 4% |
+| Four midterm exams | 60% |
+| Cumulative final exam | 22% |
+
+**Homework:** Regular written assignments provide practice with solution methods and modeling. Solutions should be legible, logically organized, and submitted according to the current course instructions.
+
+**Exams:** Timed written exams evaluate solution techniques, conceptual reasoning, and interpretation. The final exam is cumulative. Exact examination dates, permitted materials, grading rules, and any dropped scores are semester-specific.
+
+<h3 id="course-schedule">5. General course schedule</h3>
+
+Topics are presented in teaching order, without tying the outline to any particular semester.
+
+{% include course-general-schedule.html units=site.data.math316.units %}
+
+<h2 id="lecture-materials">Lecture materials</h2>
+
+Lecture notes are arranged sequentially by chapter. Available topics link to PDFs; additional notes and topic illustrations will be added over time.
+
+{% include course-lecture-materials.html units=site.data.math316.units %}
 
 [Back to Teaching]({{ '/teaching/' | relative_url }})

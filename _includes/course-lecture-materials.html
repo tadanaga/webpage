@@ -1,0 +1,68 @@
+{% comment %}
+Reusable single-column lecture materials for MATH 2531, 316, and 375.
+Pass course data using: {% include course-lecture-materials.html units=site.data.math316.units %}
+Each unit may have an image/image_alt and a lectures list.
+Each lecture may have a number, title, description, and optional pdf.
+If lectures are empty, the site shows a single understated 'coming later' row.
+{% endcomment %}
+
+<nav class="course-unit-nav" aria-label="Jump to a course topic">
+  {% for unit in include.units %}
+  <a href="#topic-{{ unit.number }}">{{ unit.number }}. {{ unit.short_title | escape }}</a>
+  {% endfor %}
+</nav>
+
+{% for unit in include.units %}
+<section class="course-topic" id="topic-{{ unit.number }}" aria-labelledby="topic-{{ unit.number }}-title">
+  <div class="course-topic__header">
+    <div class="course-topic__intro">
+      <h3 class="course-topic__title" id="topic-{{ unit.number }}-title">{{ unit.number }}. {{ unit.title | escape }}</h3>
+      {% if unit.summary %}
+      <p class="course-topic__summary">{{ unit.summary | escape }}</p>
+      {% endif %}
+    </div>
+    <figure class="course-topic__figure">
+      {% if unit.image %}
+      <img src="{{ unit.image | relative_url }}" alt="{{ unit.image_alt | default: unit.title | escape }}" loading="lazy">
+      {% else %}
+      <div class="course-topic__placeholder" role="note" aria-label="Illustration space reserved for {{ unit.title | escape }}">
+        <span>Topic illustration</span>
+        <small>To be added</small>
+      </div>
+      {% endif %}
+    </figure>
+  </div>
+  <div class="lecture-list">
+    {% if unit.lectures.size > 0 %}
+      {% for lecture in unit.lectures %}
+      <article class="lecture-row">
+        <div class="lecture-row__content">
+          {% if lecture.number %}
+          <div class="lecture-row__number">Lecture {{ lecture.number | escape }}</div>
+          {% endif %}
+          <h4 class="lecture-row__title">{{ lecture.title | escape }}</h4>
+          {% if lecture.description %}
+          <p class="lecture-row__description">{{ lecture.description | escape }}</p>
+          {% endif %}
+        </div>
+        <div class="lecture-row__actions">
+          {% if lecture.pdf %}
+          <a href="{{ lecture.pdf | relative_url }}" aria-label="View PDF notes for {{ lecture.title | escape }}">View PDF <span aria-hidden="true">↗</span></a>
+          {% else %}
+          <span class="lecture-row__forthcoming">Notes forthcoming</span>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    {% else %}
+      <article class="lecture-row lecture-row--empty">
+        <div class="lecture-row__content">
+          <h4 class="lecture-row__title">Lecture materials in development</h4>
+          <p class="lecture-row__description">Notes, examples, and figures for this topic will be added here.</p>
+        </div>
+        <span class="lecture-row__forthcoming">Coming later</span>
+      </article>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}

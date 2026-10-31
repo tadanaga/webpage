@@ -15,6 +15,7 @@ This is a **semester-independent course overview**. Official meeting times, asse
   <a href="#syllabus">Syllabus</a>
   <a href="#course-schedule">General schedule</a>
   <a href="#lecture-materials">Lecture materials</a>
+  <a href="#interactive-tools">Interactive tools</a>
 </nav>
 
 <h2 id="syllabus">Course syllabus</h2>
@@ -76,5 +77,9 @@ Topics are presented in teaching order, without tying the outline to any particu
 Lecture notes are arranged sequentially by chapter. Available topics link to PDFs; additional notes and topic illustrations will be added over time.
 
 {% include course-lecture-materials.html units=site.data.math316.units link_label="View notes" %}
+
+<h2 id="interactive-tools">Interactive tools</h2>
+
+[**Linear Systems Explorer**]({{ '/tools/linear-systems/' | relative_url }}) — Plot direction fields for **x′ = Ax**, change the matrix, and click to trace solution trajectories. Includes sample portraits, eigenvalues, and real eigendirections.
 
 [Back to Teaching]({{ '/teaching/' | relative_url }})

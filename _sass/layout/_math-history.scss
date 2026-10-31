@@ -224,6 +224,47 @@
   color: var(--global-text-color-light);
 }
 
+/* Optional Wikipedia or reference links for each person. */
+.math-history-person__links {
+  margin: 0.85rem 0;
+}
+
+.math-history-person__links > strong {
+  display: block;
+  color: var(--site-heading-color);
+  font-size: 0.86rem;
+  margin-bottom: 0.3rem;
+}
+
+.math-history-person__links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.math-history-person__links li {
+  margin: 0;
+}
+
+.page__content .math-history-person__links a {
+  display: inline-block;
+  border: 1px solid var(--global-border-color);
+  background: var(--site-panel-color);
+  border-radius: 5px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.page__content .math-history-person__links a:hover,
+.page__content .math-history-person__links a:focus-visible {
+  border-color: var(--site-accent-color);
+  background: var(--site-accent-soft);
+}
+
 @media (max-width: 640px) {
   .math-history-person__summary {
     grid-template-columns: 72px minmax(0,1fr) 1rem;

@@ -68,6 +68,11 @@ mathematicians:
     course: "Differential Equations · Numerical Computing"
     summary: "Euler made foundational contributions to analysis, mechanics, number theory, and the notation of modern mathematics."
     fact: "Euler continued producing remarkable amounts of mathematics after becoming almost completely blind. Nearly half of his published work came after his return to St Petersburg in 1766."
+    links:
+      - label: "Euler's formula"
+        url: "https://en.wikipedia.org/wiki/Euler's_formula"
+      - label: "Euler method"
+        url: "https://en.wikipedia.org/wiki/Euler_method"    
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Euler/"
   - id: "lagrange"
     name: "Joseph-Louis Lagrange"
@@ -101,6 +106,7 @@ mathematicians:
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Fourier/"
   - id: "germain"
     name: "Sophie Germain"
+    hidden: true
     birth: 1776
     death: 1831
     lane: 2
@@ -118,6 +124,13 @@ mathematicians:
     course: "Numerical Computing"
     summary: "Gauss worked across number theory, astronomy, statistics, and computational mathematics; Gaussian quadrature and least squares remain fundamental tools."
     fact: "In 1801, Gauss used limited observations to predict where astronomers could find Ceres after it disappeared behind the Sun. His calculation helped recover the newly discovered object."
+    links:
+      - label: "Gaussian elimination"
+        url: "https://en.wikipedia.org/wiki/Gaussian_elimination"
+      - label: "Gaussian quadrature"
+        url: "https://en.wikipedia.org/wiki/Gaussian_quadrature"
+      - label: "Gauss–Seidel method"
+        url: "https://en.wikipedia.org/wiki/Gauss%E2%80%93Seidel_method"
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Gauss/"
   - id: "cauchy"
     name: "Augustin-Louis Cauchy"
@@ -151,6 +164,7 @@ mathematicians:
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Jacobi/"
   - id: "lovelace"
     name: "Ada Lovelace"
+    hidden: true
     birth: 1815
     death: 1852
     lane: 2

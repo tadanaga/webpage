@@ -32,6 +32,16 @@ If lectures are empty, the site shows a single understated 'coming later' row.
       {% endif %}
     </figure>
   </div>
+  {% if unit.outline.size > 0 %}
+  <details class="course-topic__details">
+    <summary>Topics covered</summary>
+    <ul class="course-topic__outline">
+      {% for item in unit.outline %}
+      <li>{{ item | escape }}</li>
+      {% endfor %}
+    </ul>
+  </details>
+  {% endif %}
   <div class="lecture-list">
     {% if unit.lectures.size > 0 %}
       {% for lecture in unit.lectures %}

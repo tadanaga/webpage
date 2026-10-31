@@ -2,6 +2,12 @@
 # and numerical computing. Birth/death years are in the Gregorian calendar where applicable.
 # Each entry links to a scholarly biographical reference; add new entries here.
 # lane controls the vertical placement of a label in the scrollable overview.
+# To hide a person from the site, add under their name: hidden: true
+# To add topic links, insert alongside their other fields:
+#     links:
+#       - label: "A named theorem or mathematical concept"
+#         url: "https://en.wikipedia.org/wiki/Example"
+# The template automatically displays links and omits hidden people.
 mathematicians:
   - id: "descartes"
     name: "René Descartes"
@@ -172,6 +178,9 @@ mathematicians:
     course: "Differential Equations"
     summary: "Heaviside developed operational calculus for analyzing electrical circuits, advanced vector analysis and electromagnetism, and gave his name to the Heaviside step function."
     fact: "Heaviside left school at sixteen and worked as a telegraph operator. Fascinated by Maxwell's theory, he later left his job to study it full-time and helped reformulate Maxwell's original system into the four vector equations familiar today."
+    links:
+      - label: "Heaviside step function"
+        url: "https://en.wikipedia.org/wiki/Heaviside_step_function"
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Heaviside/"
   - id: "runge"
     name: "Carl Runge"

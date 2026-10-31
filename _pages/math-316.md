@@ -75,6 +75,6 @@ Topics are presented in teaching order, without tying the outline to any particu
 
 Lecture notes are arranged sequentially by chapter. Available topics link to PDFs; additional notes and topic illustrations will be added over time.
 
-{% include course-lecture-materials.html units=site.data.math316.units %}
+{% include course-lecture-materials.html units=site.data.math316.units link_label="View notes" %}
 
 [Back to Teaching]({{ '/teaching/' | relative_url }})

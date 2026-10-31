@@ -5,6 +5,8 @@ permalink: /timeline/
 author_profile: true
 ---
 
+<p class="tools-back"><a href="{{ '/tools/' | relative_url }}">← All tools</a></p>
+
 Mathematical ideas have histories, and the names attached to theorems and algorithms belonged to real people. This growing timeline collects some of the mathematicians whose work appears in calculus, differential equations, and numerical computing.
 
 <div class="math-history-overview" role="region" tabindex="0" aria-label="Scrollable timeline of mathematicians, 1600 to 1950">

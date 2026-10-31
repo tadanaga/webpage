@@ -75,6 +75,6 @@ This schedule describes the order of major topics; exact pacing and assessment d
 
 The lectures below are organized sequentially by topic. Each entry includes a short description and a PDF of the slides, with one illustration space per topic group.
 
-{% include course-lecture-materials.html units=site.data.math375.units %}
+{% include course-lecture-materials.html units=site.data.math375.units link_label="View slides" %}
 
 [Back to Teaching]({{ '/teaching/' | relative_url }})

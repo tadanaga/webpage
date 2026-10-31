@@ -6,24 +6,57 @@ units:
     title: "Vectors, lines, planes, and surfaces"
     short_title: "3D geometry"
     summary: "Coordinates, vectors, dot and cross products, lines, planes, and quadric surfaces."
+    outline:
+      - "Cartesian coordinates and three-dimensional space"
+      - "Vectors and vector operations"
+      - "Dot products, angles, and projections"
+      - "Cross products and their geometric interpretation"
+      - "Equations of lines and planes"
+      - "Quadric surfaces and their traces"
     lectures: []
   - number: 2
     title: "Vector-valued functions"
     short_title: "Space curves"
     summary: "Space curves, derivatives, arc length, curvature, and motion in three dimensions."
+    outline:
+      - "Vector-valued functions and space curves"
+      - "Limits, derivatives, and integrals of vector-valued functions"
+      - "Tangent vectors and unit tangent vectors"
+      - "Arc length, curvature, and normal vectors"
+      - "Motion in space: velocity and acceleration"
     lectures: []
   - number: 3
     title: "Functions of several variables"
     short_title: "Multivariable differentiation"
     summary: "Limits, partial derivatives, gradients, tangent planes, optimization, and Lagrange multipliers."
+    outline:
+      - "Functions of several variables; graphs and level sets"
+      - "Limits and continuity"
+      - "Partial derivatives and higher-order partial derivatives"
+      - "Tangent planes and linear approximations"
+      - "The multivariable chain rule"
+      - "Directional derivatives and the gradient vector"
+      - "Local and absolute extrema"
+      - "Constrained optimization with Lagrange multipliers"
     lectures: []
   - number: 4
     title: "Multiple integrals"
     short_title: "Multiple integrals"
     summary: "Double and triple integration, including polar, cylindrical, and spherical coordinates."
+    outline:
+      - "Double integrals over rectangular and general regions"
+      - "Double integrals in polar coordinates and applications"
+      - "Triple integrals in Cartesian coordinates"
+      - "Triple integrals in cylindrical and spherical coordinates"
     lectures: []
   - number: 5
     title: "Vector calculus"
     short_title: "Vector calculus"
     summary: "Vector fields, line integrals, conservative fields, Green's theorem, curl, and divergence."
+    outline:
+      - "Vector fields"
+      - "Line integrals of scalar and vector functions"
+      - "Conservative vector fields and the fundamental theorem for line integrals"
+      - "Green's theorem"
+      - "Curl and divergence"
     lectures: []

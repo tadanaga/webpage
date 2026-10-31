@@ -57,7 +57,7 @@ If lectures are empty, the site shows a single understated 'coming later' row.
         </div>
         <div class="lecture-row__actions">
           {% if lecture.pdf %}
-          <a href="{{ lecture.pdf | relative_url }}" aria-label="View PDF notes for {{ lecture.title | escape }}">View PDF <span aria-hidden="true">↗</span></a>
+          <a href="{{ lecture.pdf | relative_url }}" aria-label="View PDF notes for {{ lecture.title | escape }}">{{ include.link_label | default: "View PDF" | escape }} <span aria-hidden="true">↗</span></a>
           {% else %}
           <span class="lecture-row__forthcoming">Notes forthcoming</span>
           {% endif %}

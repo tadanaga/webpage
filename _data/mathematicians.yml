@@ -191,6 +191,9 @@ mathematicians:
     course: "Numerical Computing"
     summary: "Runge developed numerical and graphical approaches to mathematics and helped shape methods for solving differential equations."
     fact: "Runge spent his early childhood in Havana and grew up speaking English at home. At university he became a close friend of Max Planck, the future pioneer of quantum theory."
+    links:
+      - label: "Runge-Kutta Methods"
+        url: "https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods"
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Runge/"
   - id: "markov"
     name: "Andrey Markov"
@@ -211,9 +214,13 @@ mathematicians:
     course: "Numerical Computing"
     summary: "Kutta advanced numerical methods for ordinary differential equations; his name survives in Runge–Kutta schemes."
     fact: "Kutta developed an influential numerical method for differential equations in his 1900 doctoral thesis. He later studied aerodynamics, including the mathematical description of lift on aircraft wings."
+    links:
+      - label: "Runge-Kutta Methods"
+        url: "https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods"    
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Kutta/"
   - id: "noether"
     name: "Emmy Noether"
+    hidden: true
     birth: 1882
     death: 1935
     lane: 2

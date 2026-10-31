@@ -1,0 +1,29 @@
+# MATH 2531 curriculum topic groups; lecture notes are intentionally blank for now.
+# Add lecture items later with number, title, description, and optional pdf.
+# Each unit also supports image and image_alt for one representative figure.
+units:
+  - number: 1
+    title: "Vectors, lines, planes, and surfaces"
+    short_title: "3D geometry"
+    summary: "Coordinates, vectors, dot and cross products, lines, planes, and quadric surfaces."
+    lectures: []
+  - number: 2
+    title: "Vector-valued functions"
+    short_title: "Space curves"
+    summary: "Space curves, derivatives, arc length, curvature, and motion in three dimensions."
+    lectures: []
+  - number: 3
+    title: "Functions of several variables"
+    short_title: "Multivariable differentiation"
+    summary: "Limits, partial derivatives, gradients, tangent planes, optimization, and Lagrange multipliers."
+    lectures: []
+  - number: 4
+    title: "Multiple integrals"
+    short_title: "Multiple integrals"
+    summary: "Double and triple integration, including polar, cylindrical, and spherical coordinates."
+    lectures: []
+  - number: 5
+    title: "Vector calculus"
+    short_title: "Vector calculus"
+    summary: "Vector fields, line integrals, conservative fields, Green's theorem, curl, and divergence."
+    lectures: []

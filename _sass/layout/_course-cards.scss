@@ -201,3 +201,28 @@
     margin-top: 0.75rem;
   }
 }
+
+/* Unpublished notes remain visibly distinct from downloadable PDFs. */
+.lecture-row__forthcoming {
+  display: inline-block;
+  color: var(--global-text-color-light);
+  font-size: 0.83rem;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.lecture-row--empty {
+  border-left-color: var(--global-border-color);
+}
+
+/* Keep optional future-topic outlines compact until lecture materials exist. */
+.course-topic__outline {
+  margin: 0.15rem 0 0.9rem;
+  padding-left: 1.35rem;
+  color: var(--global-text-color-light);
+  font-size: 0.91rem;
+}
+
+.course-topic__outline li {
+  margin-bottom: 0.2rem;
+}

@@ -24,8 +24,9 @@ Course materials include typed lecture notes and organized Canvas
 modules, with Desmos for visual exploration and MATLAB for
 computational experiments.
 
-For historical context on the people behind these methods, see my
-[Mathematicians Through Time]({{ '/timeline/' | relative_url }}) page.
+Additional teaching resources, including the mathematicians timeline and an
+interactive phase-plane explorer, are collected on my
+[Tools page]({{ '/tools/' | relative_url }}).
 
 ## New Jersey Institute of Technology
 

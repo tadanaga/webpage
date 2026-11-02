@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "MATH/CS 375 — Introduction to Numerical Computing"
+description: "Introduction to Numerical Computing syllabus, MATLAB material, and lecture slides on numerical methods and algorithms."
 permalink: /teaching/math-375/
 author_profile: true
 ---

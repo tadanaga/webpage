@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Research"
+description: "Research in numerical methods for PDEs, finite element domain decomposition, Helmholtz scattering, and nonlinear equations."
 permalink: /portfolio/
 author_profile: true
 ---

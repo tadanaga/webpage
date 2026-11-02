@@ -2,8 +2,8 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><span class="navicon"></span></button>
+      <nav id="site-nav" class="greedy-nav" aria-label="Main navigation">
+        <button aria-label="More navigation links" type="button"><span class="navicon"></span></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
             <a href="{{ base_path }}/">{{ site.title }}</a>
@@ -14,8 +14,30 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+            <li class="masthead__menu-item{% if link.children %} masthead__menu-item--dropdown{% endif %}{% if page.url contains link.url and link.url != '/' %} selected{% endif %}">
+              {% if link.children %}
+                <div class="masthead__menu-item-inner">
+                  <a class="masthead__menu-link" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+                  <button class="masthead__submenu-toggle" type="button"
+                          aria-label="Show {{ link.title }} courses"
+                          aria-expanded="false"
+                          aria-controls="nav-submenu-{{ forloop.index }}">
+                    <span aria-hidden="true">▾</span>
+                  </button>
+                </div>
+                <ul class="masthead__submenu" id="nav-submenu-{{ forloop.index }}" aria-label="{{ link.title }} courses">
+                  {% for child in link.children %}
+                    {% if child.url contains 'http' %}
+                      {% assign child_domain = '' %}
+                    {% else %}
+                      {% assign child_domain = base_path %}
+                    {% endif %}
+                    <li><a href="{{ child_domain }}{{ child.url }}" {% if page.url == child.url %}aria-current="page"{% endif %}>{{ child.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% else %}
+                <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+              {% endif %}
             </li>
           {% endfor %}
           <li id="theme-toggle" class="masthead__menu-item persist tail">
@@ -27,3 +49,46 @@
     </div>
   </div>
 </div>
+<script>
+(function () {
+  function initializeTeachingMenu() {
+    var menus = document.querySelectorAll('.masthead__menu-item--dropdown');
+    menus.forEach(function (item) {
+      var toggle = item.querySelector('.masthead__submenu-toggle');
+      function closeMenu() {
+        item.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      toggle.addEventListener('click', function () {
+        var wasOpen = item.classList.contains('is-open');
+        menus.forEach(function (other) {
+          other.classList.remove('is-open');
+          var button = other.querySelector('.masthead__submenu-toggle');
+          if (button) button.setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) {
+          item.classList.add('is-open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+      item.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          closeMenu();
+          toggle.focus();
+        }
+      });
+      document.addEventListener('pointerdown', function (event) {
+        if (!item.contains(event.target)) closeMenu();
+      });
+      item.addEventListener('focusout', function (event) {
+        if (!item.contains(event.relatedTarget)) closeMenu();
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTeachingMenu);
+  } else {
+    initializeTeachingMenu();
+  }
+}());
+</script>

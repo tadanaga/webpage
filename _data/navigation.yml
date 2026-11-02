@@ -5,6 +5,13 @@ main:
 
   - title: "Teaching"
     url: /teaching/
+    children:
+      - title: "Calculus III"
+        url: /teaching/math-2531/
+      - title: "Applied ODEs"
+        url: /teaching/math-316/
+      - title: "Numerical Computing"
+        url: /teaching/math-375/
 
   - title: "Research"
     url: /portfolio/

@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "Home"
+description: "Tadanaga Takahashi is a mathematical sciences postdoctoral fellow at the University of New Mexico, working in numerical analysis, scientific computing, and teaching."
 author_profile: true
 ---
 

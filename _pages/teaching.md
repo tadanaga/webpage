@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Teaching"
+description: "Teaching materials, syllabi, lecture notes, and slides for Calculus III, Applied Differential Equations, and Numerical Computing."
 permalink: /teaching/
 author_profile: true
 ---

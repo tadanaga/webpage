@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "MATH 316 — Applied Ordinary Differential Equations"
+description: "Applied Ordinary Differential Equations syllabus, lecture notes, and topic schedule, including Laplace transforms and linear systems."
 permalink: /teaching/math-316/
 author_profile: true
 ---

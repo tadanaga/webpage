@@ -291,3 +291,186 @@ button:focus-visible {
     padding: 1rem;
   }
 }
+
+
+/* ==========================================================================
+   TEACHING NAVIGATION DROPDOWN
+   Accessible by hover on desktop; the arrow toggles it on touch/keyboard.
+   The Teaching label continues to link to the course overview.
+   ========================================================================== */
+
+.masthead .greedy-nav li.masthead__menu-item--dropdown {
+  position: relative;
+}
+
+.masthead__menu-item-inner {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.masthead .greedy-nav .masthead__menu-item-inner .masthead__menu-link {
+  margin-right: 0;
+}
+
+/* Override the default greedy-nav menu button (absolute positioning). */
+.masthead .greedy-nav .masthead__submenu-toggle {
+  display: inline-flex;
+  position: static;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 29px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--global-masthead-link-color);
+  line-height: 1;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: auto;
+}
+
+.masthead .greedy-nav .masthead__submenu-toggle:hover,
+.masthead .greedy-nav .masthead__submenu-toggle:focus-visible {
+  color: var(--site-accent-color);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.masthead .greedy-nav .masthead__submenu-toggle span {
+  transition: transform 0.15s ease;
+}
+
+.masthead .greedy-nav .masthead__menu-item--dropdown.is-open .masthead__submenu-toggle span {
+  transform: rotate(180deg);
+}
+
+/* 'selected a' in the upstream theme disables all descendant links.
+   Restore clickability to the course links and keep the active underline. */
+.masthead .greedy-nav .masthead__menu-item--dropdown.selected .masthead__submenu a {
+  pointer-events: auto;
+  cursor: pointer;
+  border-bottom: 0;
+  font-weight: 550;
+}
+
+.masthead .greedy-nav .masthead__menu-item--dropdown.selected .masthead__menu-link {
+  color: #f6fbf8;
+  border-bottom: 3px solid var(--site-accent-color);
+}
+
+.masthead .greedy-nav .masthead__submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 200;
+  width: max-content;
+  min-width: 225px;
+  max-width: min(290px, 90vw);
+  margin: 0;
+  padding: 0.35rem;
+  border: 1px solid var(--global-border-color);
+  border-top: 3px solid var(--site-accent-color);
+  border-radius: 0 0 7px 7px;
+  background: var(--site-panel-color);
+  box-shadow: 0 12px 26px rgba(8, 32, 42, 0.20);
+  list-style: none;
+  white-space: normal;
+}
+
+/* Override the template's 'display: table-cell' rule for nested links. */
+.masthead .greedy-nav .masthead__submenu li {
+  display: block;
+  float: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  white-space: normal;
+  font-weight: 500;
+}
+
+.masthead .greedy-nav .masthead__submenu a,
+.masthead .greedy-nav .masthead__menu-item--dropdown.selected .masthead__submenu a {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0.65rem 0.8rem;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--site-heading-color);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.masthead .greedy-nav .masthead__submenu a::before {
+  display: none;
+}
+
+.masthead .greedy-nav .masthead__submenu a:hover,
+.masthead .greedy-nav .masthead__submenu a:focus-visible,
+.masthead .greedy-nav .masthead__menu-item--dropdown.selected .masthead__submenu a:hover {
+  color: var(--global-link-color-hover);
+  background: var(--site-accent-soft);
+  border: 0;
+}
+
+.masthead .greedy-nav .masthead__submenu a[aria-current="page"] {
+  font-weight: 700;
+  background: var(--site-accent-soft);
+}
+
+.masthead .greedy-nav .masthead__menu-item--dropdown.is-open > .masthead__submenu {
+  display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .masthead .greedy-nav .masthead__menu-item--dropdown:hover > .masthead__submenu {
+    display: block;
+  }
+}
+
+/* Greedy navigation moves entire items into the right-side overflow menu. */
+.masthead .greedy-nav .hidden-links .masthead__menu-item-inner .masthead__menu-link {
+  margin: 0;
+  padding: 10px 0 10px 20px;
+  flex: 1;
+}
+
+.masthead .greedy-nav .hidden-links .masthead__submenu-toggle {
+  width: 44px;
+  height: 44px;
+}
+
+.masthead .greedy-nav .hidden-links .masthead__submenu {
+  position: static;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0.2rem 0.25rem 0.35rem 0.65rem;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--global-border-color);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.masthead .greedy-nav .hidden-links .masthead__submenu a,
+.masthead .greedy-nav .hidden-links .masthead__menu-item--dropdown.selected .masthead__submenu a {
+  color: var(--global-masthead-link-color);
+  padding: 0.6rem 0.8rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .masthead .greedy-nav .masthead__submenu-toggle span {
+    transition: none;
+  }
+}

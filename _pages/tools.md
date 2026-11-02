@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Tools"
+description: "Interactive mathematics resources including a mathematicians timeline and a phase-plane explorer for linear systems."
 permalink: /tools/
 author_profile: true
 ---

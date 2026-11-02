@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Mathematicians Through Time"
+description: "Explore a timeline of mathematicians through brief biographies, historical anecdotes, and related mathematical concepts."
 permalink: /timeline/
 author_profile: true
 ---

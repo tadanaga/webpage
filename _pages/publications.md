@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Publications"
+description: "Publications by Tadanaga Takahashi on numerical analysis, domain decomposition, the Monge–Ampère equation, and granular materials."
 permalink: /publications/
 author_profile: true
 ---

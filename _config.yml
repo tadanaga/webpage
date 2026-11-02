@@ -14,7 +14,6 @@ title_separator          : "-"
 name                     : "Tadanaga Takahashi"
 description              : "Teaching, numerical analysis, and scientific computing by Tadanaga Takahashi, a mathematician at the University of New Mexico."
 url                      : "https://tadanagatakahashi.com"
-                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "tadanaga/webpage"
 
@@ -72,7 +71,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true     # change to true to hide the RSS feed in the footer
   path                   : # blank (default) uses feed.xml
 
 

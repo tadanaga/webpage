@@ -25,7 +25,6 @@ This is a **semester-independent course overview**. Official meeting times, exam
 **Course:** MATH/CS 375 — Introduction to Numerical Computing  
 **Institution:** University of New Mexico  
 **Credits:** 3  
-**Instruction:** Mathematical analysis and MATLAB-based numerical experiments.
 
 The course explores numerical algorithms for differentiation, root finding, linear systems, interpolation, integration, eigenvalue problems, approximation, and differential equations, with particular attention to convergence, stability, and computational cost.
 
@@ -53,7 +52,7 @@ By the end of the course, students should be able to:
 
 ### 4. Assessment and grading
 
-The following **illustrates the grading breakdown used in Spring 2026**. The number and weight of midterm exams may vary between semesters.
+The following illustrates the grading breakdown used in Spring 2026. The number and weight of midterm exams may vary between semesters.
 
 | Assessment | Weight |
 |:--|--:|

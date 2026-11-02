@@ -26,7 +26,6 @@ This is a **semester-independent course overview**. Official meeting times, asse
 **Course:** MATH 316 — Applied Ordinary Differential Equations  
 **Institution:** University of New Mexico  
 **Credits:** 3  
-**Instruction:** Lecture-based course with applications, worked examples, and problem solving.
 
 The course emphasizes how differential equations arise from models, how their solutions are constructed, and how solution behavior can be understood qualitatively.
 
@@ -48,13 +47,11 @@ By the end of the course, students should be able to:
 
 **Textbook:** J. David Logan, *A First Course in Differential Equations*, 3rd edition (textbook from a recent coordinated offering).
 
-**Software:** MATLAB may be used for numerical experiments and visualizations; see the current course instructions for required computing work.
-
 **Course resources:** Notes, weekly assignments, announcements, and grades are distributed through UNM Canvas for each semester.
 
 ### 4. Assessment and grading
 
-The following is a **representative grading breakdown from the Fall 2026 coordinated course**, not a promise that future offerings will use the same weights.
+The following is a representative grading breakdown, not a promise that future offerings will use the same weights.
 
 | Assessment | Weight |
 |:--|--:|

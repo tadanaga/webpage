@@ -14,23 +14,18 @@ If lectures are empty, the site shows a single understated 'coming later' row.
 
 {% for unit in include.units %}
 <section class="course-topic" id="topic-{{ unit.number }}" aria-labelledby="topic-{{ unit.number }}-title">
-  <div class="course-topic__header">
+  <div class="course-topic__header{% if unit.image %} course-topic__header--with-image{% endif %}">
     <div class="course-topic__intro">
       <h3 class="course-topic__title" id="topic-{{ unit.number }}-title">{{ unit.number }}. {{ unit.title | escape }}</h3>
       {% if unit.summary %}
       <p class="course-topic__summary">{{ unit.summary | escape }}</p>
       {% endif %}
     </div>
+    {% if unit.image %}
     <figure class="course-topic__figure">
-      {% if unit.image %}
       <img src="{{ unit.image | relative_url }}" alt="{{ unit.image_alt | default: unit.title | escape }}" loading="lazy">
-      {% else %}
-      <div class="course-topic__placeholder" role="note" aria-label="Illustration space reserved for {{ unit.title | escape }}">
-        <span>Topic illustration</span>
-        <small>To be added</small>
-      </div>
-      {% endif %}
     </figure>
+    {% endif %}
   </div>
   {% if unit.outline.size > 0 %}
   <details class="course-topic__details">

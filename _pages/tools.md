@@ -42,4 +42,5 @@ Interactive resources and historical references for exploring mathematical ideas
       <a href="{{ '/tools/nonlinear-systems/' | relative_url }}">Open nonlinear explorer <span aria-hidden="true">↗</span></a>
     </div>
   </article>
+  <article class="tool-resource"><div class="tool-resource__body"><span class="tool-resource__eyebrow">Differential equations · Interactive simulation</span><h2 class="tool-resource__title">Pendulum Simulator</h2><p>Watch pendulum motion, phase-plane trajectories, and angle-versus-time plots move together. Compare undamped, damped, critical, overdamped, and rotating motions.</p></div><div class="tool-resource__action"><a href="{{ '/tools/pendulum/' | relative_url }}">Open pendulum simulator <span aria-hidden="true">↗</span></a></div></article>
 </div>

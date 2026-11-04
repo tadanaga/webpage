@@ -82,4 +82,6 @@ Lecture notes are arranged sequentially by chapter. Available topics link to PDF
 
 [Nonlinear Systems Explorer]({{ "/tools/nonlinear-systems/" | relative_url }}) — Enter two functions, explore direction fields and nullclines, and click to trace trajectories. Includes pendulum, saddle and spiral, and saddle and node examples.
 
+[**Pendulum Simulator**]({{ "/tools/pendulum/" | relative_url }}) — Animate a pendulum alongside its phase-plane trajectory and angle-versus-time plot. Compare damping presets or choose your own initial conditions.
+
 [Back to Teaching]({{ '/teaching/' | relative_url }})

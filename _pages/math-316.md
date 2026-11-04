@@ -80,4 +80,6 @@ Lecture notes are arranged sequentially by chapter. Available topics link to PDF
 
 [**Linear Systems Explorer**]({{ '/tools/linear-systems/' | relative_url }}) — Plot direction fields for **x′ = Ax**, change the matrix, and click to trace solution trajectories. Includes sample portraits, eigenvalues, and real eigendirections.
 
+[Nonlinear Systems Explorer]({{ "/tools/nonlinear-systems/" | relative_url }}) — Enter two functions, explore direction fields and nullclines, and click to trace trajectories. Includes pendulum, saddle and spiral, and saddle and node examples.
+
 [Back to Teaching]({{ '/teaching/' | relative_url }})

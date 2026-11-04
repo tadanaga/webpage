@@ -32,4 +32,14 @@ Interactive resources and historical references for exploring mathematical ideas
     </div>
   </article>
 
+  <article class="tool-resource">
+    <div class="tool-resource__body">
+      <span class="tool-resource__eyebrow">Differential equations · Interactive visualization</span>
+      <h2 class="tool-resource__title">Nonlinear Systems Explorer</h2>
+      <p>Enter two functions, view a speed-colored direction field, show nullclines, and click to trace solution trajectories. Try pendulum, saddle and spiral, and saddle and node examples.</p>
+    </div>
+    <div class="tool-resource__action">
+      <a href="{{ '/tools/nonlinear-systems/' | relative_url }}">Open nonlinear explorer <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
 </div>

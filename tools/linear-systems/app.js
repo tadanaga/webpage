@@ -1,6 +1,27 @@
 const $=id=>document.getElementById(id),canvas=$('canvas'),ctx=canvas.getContext('2d');let seeds=[],box;const ids=['a','b','c','d'];
 function matrix(){return ids.map(id=>$(id).value.trim()===''?NaN:Number($(id).value))}
-function info([a,b,c,d]){let t=a+d,det=a*d-b*c,disc=(a-d)**2+4*b*c,eps=1e-9*Math.max(1,...[a,b,c,d].map(x=>x*x));let kind;if(Math.abs(det)<eps)kind='Non-isolated equilibria';else if(det<0)kind='Saddle';else if(disc < -eps)kind=Math.abs(t)<1e-9?'Center':t<0?'Stable spiral':'Unstable spiral';else kind=t<0?'Stable node':'Unstable node';const fmt=x=>Math.abs(x)<1e-10?'0':Number(x.toPrecision(4)).toString();return {t,det,disc,kind,fmt}}
+function info([a,b,c,d]){
+  const t=a+d,det=a*d-b*c,disc=(a-d)**2+4*b*c;
+  const eps=1e-9*Math.max(1,a*a,b*b,c*c,d*d);
+  let kind;
+  if(Math.abs(det)<eps){
+    // A nonzero singular 2x2 matrix has a line of equilibrium points.
+    kind=Math.max(Math.abs(a),Math.abs(b),Math.abs(c),Math.abs(d))<1e-10
+      ? 'Entire plane of equilibria' : 'Line of equilibria';
+  }else if(det<0){
+    kind='Saddle';
+  }else if(disc < -eps){
+    kind=Math.abs(t)<1e-9?'Center':t<0?'Stable spiral':'Unstable spiral';
+  }else if(Math.abs(disc)<=eps){
+    // Repeated eigenvalue: a scalar matrix is a star; otherwise defective.
+    kind=Math.abs(a-d)<Math.sqrt(eps)&&Math.abs(b)<Math.sqrt(eps)&&Math.abs(c)<Math.sqrt(eps)
+      ? 'Star' : 'Degenerate node';
+  }else{
+    kind=t<0?'Stable node':'Unstable node';
+  }
+  const fmt=x=>Math.abs(x)<1e-10?'0':Number(x.toPrecision(4)).toString();
+  return {t,det,disc,kind,fmt};
+}
 function draw(){const A=matrix();if(A.some(x=>!Number.isFinite(x)||Math.abs(x)>1e6)){$('error').textContent='Enter four finite matrix entries between −1,000,000 and 1,000,000.';return}$('error').textContent='';const [a,b,c,d]=A,L=+$('L').value,h=+$('h').value; $('lv').textContent=L;$('hv').textContent=h;let rect=canvas.getBoundingClientRect(),W=rect.width,H=rect.height,dpr=devicePixelRatio||1;canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);let s=(Math.min(W,H)-56)/(2*L),cx=W/2,cy=H/2;box={s,cx,cy,L};const p=(x,y)=>[cx+x*s,cy-y*s];function line(x,y,X,Y,color,width=1){ctx.beginPath();ctx.moveTo(...p(x,y));ctx.lineTo(...p(X,Y));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke()}function arrow(x,y,u,v,color,width=1.5){let [px,py]=p(x,y),[qx,qy]=p(x+u,y+v),ang=Math.atan2(qy-py,qx-px),len=Math.hypot(qx-px,qy-py);if(len<0.1)return;ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(qx,qy);ctx.stroke();let z=Math.min(5,len*.4);ctx.beginPath();ctx.moveTo(qx,qy);ctx.lineTo(qx-z*Math.cos(ang-.5),qy-z*Math.sin(ang-.5));ctx.lineTo(qx-z*Math.cos(ang+.5),qy-z*Math.sin(ang+.5));ctx.fill()}
 ctx.font='11px system-ui';ctx.fillStyle='#819187';for(let j=-L;j<=L;j++){line(j,-L,j,L,'#edf0ea');line(-L,j,L,j,'#edf0ea');if(j){ctx.fillText(j,cx+j*s-4,cy+16);ctx.fillText(j,cx+7,cy-j*s+4)}}line(-L,0,L,0,'#a5b5a9');line(0,-L,0,L,'#a5b5a9');ctx.fillStyle='#38574a';ctx.font='italic 16px Georgia';ctx.fillText('x',cx+L*s+12,cy+5);ctx.fillText('y',cx+8,cy-L*s-12);
 let meta=info(A);$('kind').textContent=meta.kind;let eig=meta.disc>=0?[ (meta.t+Math.sqrt(meta.disc))/2,(meta.t-Math.sqrt(meta.disc))/2 ]:null;$('eig').textContent=eig?'λ₁ = '+meta.fmt(eig[0])+'     λ₂ = '+meta.fmt(eig[1]):'λ = '+meta.fmt(meta.t/2)+' ± '+meta.fmt(Math.sqrt(-meta.disc)/2)+'i';

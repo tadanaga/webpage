@@ -6,6 +6,8 @@ units:
     title: "First-order differential equations"
     short_title: "First order"
     summary: "First-order solution techniques, direction fields, equilibrium behavior, and mathematical models."
+    image: "/images/Math316/section-thumbnails/logistic-direction-field.svg"
+    image_alt: "Two logistic solution curves approach a dashed carrying-capacity line from above and below."
     lectures:
       - number: "1.1"
         title: "Introduction to first-order differential equations"
@@ -43,6 +45,8 @@ units:
     title: "Second-order linear differential equations"
     short_title: "Second order"
     summary: "Characteristic equations, forced and unforced oscillations, and spring–mass systems."
+    image: "/images/Math316/section-thumbnails/spring-mass.svg"
+    image_alt: "A spring and block beside an oscillation whose amplitude decays with time."
     lectures:
       - number: "2.1"
         title: "Spring–mass models"
@@ -76,6 +80,8 @@ units:
     title: "Laplace transforms"
     short_title: "Laplace transforms"
     summary: "Transforms of elementary functions, initial-value problems, step functions, and impulses."
+    image: "/images/Math316/section-thumbnails/laplace-delayed-step.svg"
+    image_alt: "A delayed step in time maps to its decreasing Laplace-transform curve for positive real s."
     lectures:
       - number: "3.1"
         title: "Definition and basic properties of the Laplace transform"
@@ -105,6 +111,8 @@ units:
     title: "Linear systems of differential equations"
     short_title: "Linear systems"
     summary: "Matrix methods, eigenvalues and eigenvectors, and the geometry of two-dimensional phase portraits."
+    image: "/images/Math316/section-thumbnails/linear-saddle.svg"
+    image_alt: "A saddle phase portrait with arrows toward the origin on the teal eigendirection and away on the gold eigendirection."
     lectures:
       - title: "Matrix formulation and eigenvectors"
         description: "Representing first-order systems in matrix form and computing eigensolutions."
@@ -116,6 +124,8 @@ units:
     title: "Nonlinear systems and applications"
     short_title: "Nonlinear systems"
     summary: "Equilibria, linearization, and nonlinear models such as predator–prey dynamics."
+    image: "/images/Math316/section-thumbnails/pendulum-phase-portrait.svg"
+    image_alt: "Closed swings and open rotation trajectories separated by a gold curve through the pendulum’s two upright equilibria."
     lectures:
       - title: "From higher-order equations to systems"
         description: "Rewriting scalar differential equations as first-order systems."

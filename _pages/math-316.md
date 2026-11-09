@@ -72,7 +72,7 @@ Topics are presented in teaching order, without tying the outline to any particu
 
 <h2 id="lecture-materials">Lecture materials</h2>
 
-Lecture notes are arranged sequentially by chapter. Available topics link to PDFs; additional notes and topic illustrations will be added over time.
+Lecture notes are arranged sequentially by chapter. Each chapter has an illustration, and available lecture notes link to PDFs.
 
 {% include course-lecture-materials.html units=site.data.math316.units link_label="View notes" %}
 

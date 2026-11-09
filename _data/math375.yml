@@ -10,8 +10,8 @@ units:
     title: "Numerical foundations"
     short_title: "Foundations"
     # summary: "Taylor approximations and the limitations of floating-point computation."
-    # image: "/images/Math375/thumb1-taylor.svg"
-    # image_alt: "Three curves showing the exponential function and two Taylor polynomial approximations."
+    image: "/images/Math375/section-thumbnails/taylor.svg"
+    image_alt: "A teal exponential curve, a gold tangent line, and a dashed violet cubic meet at the Taylor expansion point."
     lectures:
       - number: "00"
         title: "Course introduction"
@@ -33,6 +33,8 @@ units:
     title: "Numerical differentiation"
     short_title: "Differentiation"
     summary: "Approximating derivatives and improving accuracy through extrapolation."
+    image: "/images/Math375/section-thumbnails/stencil-2d.svg"
+    image_alt: "A gold center node and four teal neighbors highlighted on a square grid."
     lectures:
       - number: "03A"
         title: "Numerical differentiation"
@@ -46,6 +48,8 @@ units:
     title: "Solving nonlinear equations"
     short_title: "Nonlinear equations"
     summary: "Finding roots numerically and comparing methods for solving nonlinear problems."
+    image: "/images/Math375/section-thumbnails/newton-fractal.png"
+    image_alt: "Three interlocking Newton basins in teal, violet, and gold with intricate boundaries."
     lectures:
       - number: "04A"
         title: "Nonlinear equations and the bisection method"
@@ -63,6 +67,8 @@ units:
     title: "Direct methods for linear systems"
     short_title: "Direct solvers"
     summary: "Solving matrix equations using elimination and factorizations, with attention to computational cost and numerical stability."
+    image: "/images/Math375/section-thumbnails/lu.svg"
+    image_alt: "A dense matrix equals a lower-triangular matrix times an upper-triangular matrix."
     lectures:
       - number: "05A"
         title: "Linear algebra fundamentals"
@@ -96,6 +102,8 @@ units:
     title: "Iterative methods for linear systems"
     short_title: "Iterative solvers"
     summary: "Solving linear systems by repeated approximation, including methods that exploit sparse matrices."
+    image: "/images/Math375/section-thumbnails/iterative.svg"
+    image_alt: "Gold and violet iteration paths on nested elliptical contours of a positive-definite quadratic."
     lectures:
       - number: "08A"
         title: "Stationary iterative methods"
@@ -113,6 +121,8 @@ units:
     title: "Polynomial interpolation"
     short_title: "Interpolation"
     summary: "Constructing interpolating polynomials and understanding the errors they introduce."
+    image: "/images/Math375/section-thumbnails/runge.svg"
+    image_alt: "A smooth teal curve and a gold polynomial meet at marked nodes. The gold curve oscillates near the ends."
     lectures:
       - number: "09A"
         title: "Polynomial interpolation"
@@ -130,6 +140,8 @@ units:
     title: "Splines and data interpolation"
     short_title: "Splines"
     summary: "Using piecewise polynomials and MATLAB tools to interpolate and visualize data."
+    image: "/images/Math375/section-thumbnails/teapot.svg"
+    image_alt: "A teal mesh teapot with a gold lid, handle on the left, and curved spout on the right."
     lectures:
       - number: "10A"
         title: "Splines"
@@ -143,6 +155,8 @@ units:
     title: "Numerical integration"
     short_title: "Integration"
     summary: "Approximating integrals using Newton–Cotes formulas and Gaussian quadrature."
+    image: "/images/Math375/section-thumbnails/trapezoids.svg"
+    image_alt: "Six pale gold trapezoids beneath a teal curve, with violet dots where the function is sampled."
     lectures:
       - number: "11A"
         title: "Numerical integration"
@@ -164,6 +178,8 @@ units:
     title: "Eigenvalue methods and Markov chains"
     short_title: "Eigenvalues"
     summary: "Computing eigenpairs and applying matrix methods to Markov chains."
+    image: "/images/Math375/section-thumbnails/markov.svg"
+    image_alt: "Three colored circles linked by directed arrows, including a loop on the upper state."
     lectures:
       - number: "13A"
         title: "Power method"
@@ -177,6 +193,8 @@ units:
     title: "Least-squares approximation"
     short_title: "Least squares"
     summary: "Fitting models to data when an exact fit is unavailable or undesirable."
+    image: "/images/Math375/section-thumbnails/svd.png"
+    image_alt: "Two mountain landscapes side by side. The rank-11 reconstruction on the right has softer edges and visible banding."
     lectures:
       - number: "14A"
         title: "Least-squares methods"
@@ -190,6 +208,8 @@ units:
     title: "Numerical methods for differential equations"
     short_title: "Differential equations"
     summary: "Approximating solutions of initial-value problems with time-stepping schemes."
+    image: "/images/Math375/section-thumbnails/rk4.svg"
+    image_alt: "A teal stability region outlined in gold on the complex plane, lying mostly to the left of the imaginary axis."
     lectures:
       - number: "15A"
         title: "Numerical methods for differential equations"
@@ -207,6 +227,8 @@ units:
     title: "Monte Carlo simulation"
     short_title: "Monte Carlo"
     summary: "Estimating quantities through random sampling and computational experiments."
+    image: "/images/Math375/section-thumbnails/monte-carlo.svg"
+    image_alt: "A square containing a circle with teal dots inside and violet dots in the four corners."
     lectures:
       - number: "16"
         title: "Monte Carlo methods"

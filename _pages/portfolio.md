@@ -80,6 +80,17 @@ My doctoral research also included domain decomposition methods for the fully no
 - **Granular impact and computational topology:** Studying evolving force networks in granular materials using tools from topology.
 - **Flow estimation:** Using simulations and Kalman filtering to investigate the estimation of flow parameters.
 
+## Dissertation
+
+*Domain Decomposition Methods for Linear and Non-Linear Elliptic Problems* (PhD dissertation, New Jersey Institute of Technology, 2023).
+
+The dissertation develops finite element domain decomposition methods for Helmholtz wave scattering and nonlinear methods for the Monge–Ampère equation. The website edition, revised November 2026, corrects presentation and typographical issues; the research results are those of the original dissertation.
+
+{% assign dissertation_pdf = site.static_files | where: "path", "/files/PhD_Dissertation.pdf" | first %}
+{% if dissertation_pdf %}
+[Read the dissertation (PDF)]({{ '/files/PhD_Dissertation.pdf' | relative_url }})
+{% endif %}
+
 ## Publications and code
 
 - [Publications]({{ '/publications/' | relative_url }})

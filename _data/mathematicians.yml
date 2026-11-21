@@ -245,6 +245,21 @@ mathematicians:
     summary: "Markov pioneered the study of sequences of dependent random variables, now known as Markov chains. Markov's inequality also gives an upper bound on the probability of a large value using only a nonnegative random variable's expected value."
     fact: "In 1913, Markov analyzed 20,000 letters from Pushkin's Eugene Onegin, recording how often vowels and consonants followed one another. It became a famous early demonstration of Markov chains."
     source: "https://mathshistory.st-andrews.ac.uk/Biographies/Markov/"
+  - id: "volterra"
+    name: "Vito Volterra"
+    birth: 1860
+    death: 1940
+    lane: 4
+    topic: "Predator–prey models and integral equations"
+    course: "Differential Equations"
+    summary: "Volterra made major contributions to integral equations and mathematical biology. His predator–prey model uses coupled nonlinear differential equations to describe how interacting populations can oscillate over time."
+    fact: "In 1925, the marine biologist Umberto D’Ancona, Volterra’s future son-in-law, brought him a puzzling observation: during World War I, fishing in the Adriatic Sea had declined, yet predatory fish made up a larger proportion of the catch. Why had reduced fishing favored predators? Volterra developed a mathematical model of competing population growth, predation, and mortality to explain this pattern. He published his results in 1926, independently of Alfred Lotka, who had studied the same system earlier. Their work is now known as the Lotka–Volterra equations."
+    links:
+      - label: "Lotka–Volterra equations"
+        url: "https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations"
+      - label: "History of the predator–prey model (1920–1926)"
+        url: "https://doi.org/10.1007/978-0-85729-115-8_13"
+    source: "https://mathshistory.st-andrews.ac.uk/Biographies/Volterra/"
   - id: "kutta"
     name: "Wilhelm Kutta"
     birth: 1867

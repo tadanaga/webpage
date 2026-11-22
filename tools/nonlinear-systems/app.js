@@ -114,9 +114,12 @@ let seeds = [];   // initial conditions added by clicking
 
 // Each preset: [f, g, xmin, xmax, ymin, ymax, h, piticks]
 const presets = [
-  ['y',       '-4*sin(x)', '-3*pi', '3*pi', '-5', '5', 0.5, true],
-  ['1-x-y',   'x^2-1',     '-4',    '4',    '-2', '6', 0.4, false],
-  ['x*(y-4)', 'y*(x-1)',   '-2',    '4',    '-2', '7', 0.4, false],
+  ['-3*x+y+2',   '-4*x+2*y+2', '-3',   '5',    '-3',   '5', 0.5,  false],
+  ['x-y',        '2*y*(y-1)',  '-3.5', '4.5',  '-3.5', '4.5', 0.5, false],
+  ['1-x-y',      'x^2-1',      '-4',   '4',    '-2',   '6', 0.4,  false],
+  ['x*(3-x)-2*x*y', 'y*(2-y)-x*y', '-0.5', '5', '-0.5', '4', 0.25, false],
+  ['4*x-2*x*y', '-3*y+x*y',   '-0.5', '5',    '-0.5', '4', 0.25, false],
+  ['y',          '-4*sin(x)', '-3*pi','3*pi', '-5',   '5', 0.5,  true], 
 ];
 const ids = ['f', 'g', 'xmin', 'xmax', 'ymin', 'ymax', 'h'];
 

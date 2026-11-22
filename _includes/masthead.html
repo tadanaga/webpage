@@ -14,18 +14,18 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item{% if link.children %} masthead__menu-item--dropdown{% endif %}{% if page.url contains link.url and link.url != '/' %} selected{% endif %}">
+            <li class="masthead__menu-item{% if link.children %} masthead__menu-item--dropdown{% endif %}{% assign current_menu = false %}{% if page.url contains link.url and link.url != '/' %}{% assign current_menu = true %}{% endif %}{% for child in link.children %}{% if page.url == child.url %}{% assign current_menu = true %}{% endif %}{% endfor %}{% if current_menu %} selected{% endif %}">
               {% if link.children %}
                 <div class="masthead__menu-item-inner">
                   <a class="masthead__menu-link" href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
                   <button class="masthead__submenu-toggle" type="button"
-                          aria-label="Show {{ link.title }} courses"
+                          aria-label="Show {{ link.title }} links"
                           aria-expanded="false"
                           aria-controls="nav-submenu-{{ forloop.index }}">
                     <span aria-hidden="true">▾</span>
                   </button>
                 </div>
-                <ul class="masthead__submenu" id="nav-submenu-{{ forloop.index }}" aria-label="{{ link.title }} courses">
+                <ul class="masthead__submenu" id="nav-submenu-{{ forloop.index }}" aria-label="{{ link.title }} links">
                   {% for child in link.children %}
                     {% if child.url contains 'http' %}
                       {% assign child_domain = '' %}
@@ -51,7 +51,7 @@
 </div>
 <script>
 (function () {
-  function initializeTeachingMenu() {
+  function initializeNavigationMenus() {
     var menus = document.querySelectorAll('.masthead__menu-item--dropdown');
     menus.forEach(function (item) {
       var toggle = item.querySelector('.masthead__submenu-toggle');
@@ -86,9 +86,9 @@
     });
   }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeTeachingMenu);
+    document.addEventListener('DOMContentLoaded', initializeNavigationMenus);
   } else {
-    initializeTeachingMenu();
+    initializeNavigationMenus();
   }
 }());
 </script>

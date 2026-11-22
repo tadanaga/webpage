@@ -162,17 +162,17 @@ permalink: /tools/pendulum/
     }
 
     #phase {
-      height: 360px;
+      height: 330px;
       cursor: crosshair;
       touch-action: none;
     }
 
     #pendulum {
-      height: 270px;
+      height: 360px;
     }
 
     #angle {
-      height: 270px;
+      height: 330px;
     }
 
     /* ---------- Transport bar ---------- */
@@ -283,7 +283,7 @@ permalink: /tools/pendulum/
     <div class="eyebrow">Motion · phase portraits · differential equations</div>
     <h1>Pendulum Simulator</h1>
     <p>One motion, three perspectives. Watch the pendulum move through its phase plane and time history.</p>
-    <p class="equation">θ″ + (μ / mL) θ′ + (g / L) sin θ = 0</p>
+    <p class="equation">θ″ + γθ′ + ω² sin θ = 0</p>
   </header>
 
   <main>
@@ -307,28 +307,20 @@ permalink: /tools/pendulum/
 
         <div class="fields">
           <div>
-            <label for="L">Length L (m)</label>
-            <input id="L" type="number" value="1" min="0.1" max="10" step="0.1" required>
+            <label for="omega">Natural frequency ω (rad/s)</label>
+            <input id="omega" type="number" value="3.13156" min="0.1" max="20" step="any" required>
           </div>
           <div>
-            <label for="m">Mass m (kg)</label>
-            <input id="m" type="number" value="0.5" min="0.05" max="20" step="0.05" required>
-          </div>
-          <div>
-            <label for="mu">Damping μ</label>
-            <input id="mu" type="number" value="3.1315571206669692" min="0" max="100" step="any" required>
-          </div>
-          <div>
-            <label for="g">Gravity g (m/s²)</label>
-            <input id="g" type="number" value="9.80665" min="0.1" max="30" step="any" required>
+            <label for="gamma">Damping γ (s⁻¹)</label>
+            <input id="gamma" type="number" value="6.26312" min="0" max="100" step="any" required>
           </div>
           <div>
             <label for="theta0">Initial θ (rad)</label>
             <input id="theta0" type="number" value="1" min="-30" max="30" step="any" required>
           </div>
           <div>
-            <label for="omega0">Initial θ′ (rad/s)</label>
-            <input id="omega0" type="number" value="3" min="-30" max="30" step="any" required>
+            <label for="thetaDot0">Initial θ′ (rad/s)</label>
+            <input id="thetaDot0" type="number" value="3" min="-30" max="30" step="any" required>
           </div>
         </div>
 
@@ -347,7 +339,7 @@ permalink: /tools/pendulum/
         </p>
         <p class="help">
           The damping labels refer to the linearization near a downward
-          equilibrium. Critical damping occurs when μ/(mL) = 2√(g/L).
+          equilibrium. Critical damping occurs when γ = 2ω.
         </p>
       </form>
     </aside>
@@ -387,24 +379,24 @@ permalink: /tools/pendulum/
         <div class="help" id="readout"></div>
       </div>
 
-      <!-- Phase plane -->
+      <!-- Pendulum animation directly below playback controls -->
       <div class="panel">
-        <h2>Phase plane</h2>
-        <canvas id="phase" role="img"
-                aria-label="Angle versus angular velocity. Click to choose the initial condition."></canvas>
-        <p class="help">
-          Horizontal: θ (rad), unwrapped. Vertical: θ′ (rad/s). Filled green
-          dots: downward equilibria. Hollow red dots: upright equilibria. Blue:
-          solution curve; orange: current state.
-        </p>
+        <h2>Pendulum</h2>
+        <canvas id="pendulum" role="img"
+                aria-label="Animated pendulum synchronized with the plots"></canvas>
       </div>
 
-      <!-- Pendulum and angle-vs-time -->
+      <!-- Supporting phase and time plots -->
       <div class="lower">
         <div class="panel">
-          <h2>Pendulum</h2>
-          <canvas id="pendulum" role="img"
-                  aria-label="Animated pendulum synchronized with the plots"></canvas>
+          <h2>Phase plane</h2>
+          <canvas id="phase" role="img"
+                  aria-label="Angle versus angular velocity. Click to choose the initial condition."></canvas>
+          <p class="help">
+            Horizontal: θ (rad), unwrapped. Vertical: θ′ (rad/s). Filled green
+            dots: downward equilibria. Hollow red dots: upright equilibria. Blue:
+            solution curve; orange: current state.
+          </p>
         </div>
         <div class="panel">
           <h2>Angle versus time</h2>

@@ -295,32 +295,33 @@ permalink: /tools/pendulum/
         <div>
           <label for="preset">Try a sample motion</label>
           <select id="preset">
-            <option value="original">Original example</option>
-            <option value="undamped">Undamped oscillation</option>
-            <option value="damped">Damped oscillation</option>
-            <option value="critical">Critical damping</option>
-            <option value="overdamped">Overdamped motion</option>
-            <option value="rotations">Full rotations</option>
+            <option value="small">1. Undamped — Small Swings</option>
+            <option value="separatrix">2. Undamped — Separatrix</option>
+            <option value="rotation">3. Undamped — Over-the-Top</option>
+            <option value="underdamped">4. Underdamped</option>
+            <option value="critical">5. Critically Damped</option>
+            <option value="overdamped">6. Overdamped</option>
             <option value="custom" disabled>Custom parameters</option>
           </select>
+          <p class="help" id="preset-description">ω = 2, γ = 0; θ(0) = π/4, θ′(0) = 0.</p>
         </div>
 
         <div class="fields">
           <div>
             <label for="omega">Natural frequency ω (rad/s)</label>
-            <input id="omega" type="number" value="3.13156" min="0.1" max="20" step="any" required>
+            <input id="omega" type="number" value="2" min="0.1" max="20" step="any" required>
           </div>
           <div>
             <label for="gamma">Damping γ (s⁻¹)</label>
-            <input id="gamma" type="number" value="6.26312" min="0" max="100" step="any" required>
+            <input id="gamma" type="number" value="0" min="0" max="100" step="any" required>
           </div>
           <div>
             <label for="theta0">Initial θ (rad)</label>
-            <input id="theta0" type="number" value="1" min="-30" max="30" step="any" required>
+            <input id="theta0" type="number" value="0.7853981633974483" min="-30" max="30" step="any" required>
           </div>
           <div>
             <label for="thetaDot0">Initial θ′ (rad/s)</label>
-            <input id="thetaDot0" type="number" value="3" min="-30" max="30" step="any" required>
+            <input id="thetaDot0" type="number" value="0" min="-30" max="30" step="any" required>
           </div>
         </div>
 

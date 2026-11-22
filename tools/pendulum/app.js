@@ -353,21 +353,40 @@ $('controls').onsubmit = e => {
   apply();
 };
 
+// All examples use ω = 2; varying γ makes the damping comparison clear.
+// The last three examples start at the same displacement with zero velocity.
+const motionPresets = {
+  small: {
+    omega: 2, gamma: 0, theta0: Math.PI / 4, thetaDot0: 0, duration: 10,
+    description: 'ω = 2, γ = 0; θ(0) = π/4, θ′(0) = 0.'
+  },
+  separatrix: {
+    omega: 2, gamma: 0, theta0: 0, thetaDot0: 4, duration: 10,
+    description: 'ω = 2, γ = 0; θ(0) = 0, θ′(0) = 4 (separatrix energy).'
+  },
+  rotation: {
+    omega: 2, gamma: 0, theta0: Math.PI, thetaDot0: 2, duration: 10,
+    description: 'ω = 2, γ = 0; θ(0) = π, θ′(0) = 2 (full rotations).'
+  },
+  underdamped: {
+    omega: 2, gamma: 2, theta0: Math.PI / 4, thetaDot0: 0, duration: 10,
+    description: 'ω = 2, γ = 2 < 2ω; θ(0) = π/4, θ′(0) = 0.'
+  },
+  critical: {
+    omega: 2, gamma: 4, theta0: Math.PI / 4, thetaDot0: 0, duration: 10,
+    description: 'ω = 2, γ = 4 = 2ω; θ(0) = π/4, θ′(0) = 0.'
+  },
+  overdamped: {
+    omega: 2, gamma: 8, theta0: Math.PI / 4, thetaDot0: 0, duration: 10,
+    description: 'ω = 2, γ = 8 > 2ω; θ(0) = π/4, θ′(0) = 0.'
+  }
+};
+
 $('preset').onchange = () => {
-  const name = $('preset').value;
-  // The original physical example had g = 9.80665, L = 1, m = 0.5,
-  // and mu = sqrt(g): omega = sqrt(g/L), gamma = mu/(mL) = 2*omega.
-  const omega = 3.13156;
-  const criticalGamma = 2 * omega;
-  const p = { omega, gamma: 0, theta0: 1, thetaDot0: 0, duration: 10 };
-
-  if (name === 'original') { p.gamma = criticalGamma; p.thetaDot0 = 3; }
-  if (name === 'damped') p.gamma = .3 * criticalGamma;
-  if (name === 'critical') p.gamma = criticalGamma;
-  if (name === 'overdamped') p.gamma = 2 * criticalGamma;
-  if (name === 'rotations') { p.theta0 = 0; p.thetaDot0 = 8; }
-
+  const p = motionPresets[$('preset').value];
+  if (!p) return;
   ids.forEach(id => { $(id).value = p[id]; });
+  $('preset-description').textContent = p.description;
   apply();
 };
 
@@ -375,6 +394,7 @@ $('preset').onchange = () => {
 ids.forEach(id => {
   $(id).oninput = () => {
     $('preset').value = 'custom';
+    $('preset-description').textContent = 'Custom parameters';
     pause();
   };
 });
@@ -427,6 +447,7 @@ $('phase').onclick = e => {
   $('theta0').value = x.toFixed(5);
   $('thetaDot0').value = y.toFixed(5);
   $('preset').value = 'custom';
+  $('preset-description').textContent = 'Custom initial condition';
   apply();
 };
 

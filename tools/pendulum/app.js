@@ -4,7 +4,7 @@
  * Setup and state
  * ------------------------------------------------------------------ */
 const $ = id => document.getElementById(id);
-const ids = ['L', 'm', 'mu', 'g', 'theta0', 'omega0', 'duration'];
+const ids = ['omega', 'gamma', 'theta0', 'thetaDot0', 'duration'];
 
 let simulation;       // { p, data, step } from the last successful apply()
 let time = 0;         // current simulation time (s)
@@ -14,13 +14,14 @@ let phaseView;        // phase-plane chart geometry, used for click-to-set-initi
 
 /* ------------------------------------------------------------------ *
  * Numerics
- * Pendulum: theta'' + (mu / mL) theta' + (g / L) sin(theta) = 0
- * written as the first-order system v = [theta, omega].
+ * Pendulum: theta'' + gamma * theta' + omega^2 * sin(theta) = 0.
+ * The first-order state is v = [theta, thetaDot]; omega is the natural
+ * angular frequency, not the angular-velocity state.
  * ------------------------------------------------------------------ */
 
 // One classical Runge-Kutta step
 function rk4(v, dt, p) {
-  const F = ([x, y]) => [y, -p.mu / (p.m * p.L) * y - p.g / p.L * Math.sin(x)];
+  const F = ([x, y]) => [y, -p.gamma * y - p.omega ** 2 * Math.sin(x)];
   const add = (a, b, s) => a.map((q, i) => q + s * b[i]);
   const a = F(v);
   const b = F(add(v, a, dt / 2));
@@ -31,17 +32,17 @@ function rk4(v, dt, p) {
 
 // Integrate the whole motion up front; rows are [t, theta, omega]
 function solve(p) {
-  const rate = Math.max(Math.sqrt(p.g / p.L), p.mu / (p.m * p.L));
+  const rate = Math.max(p.omega, p.gamma);
   const dt = Math.min(.01, .1 / Math.max(1, rate));
   const n = Math.ceil(p.duration / dt);
 
   if (n > 300000) {
-    throw Error('These parameters require too many integration steps. Reduce damping or duration, or increase mass or length.');
+    throw Error('These parameters require too many integration steps. Reduce γ, ω, or the simulation duration.');
   }
 
   const step = p.duration / n;
-  const data = [[0, p.theta0, p.omega0]];
-  let v = [p.theta0, p.omega0];
+  const data = [[0, p.theta0, p.thetaDot0]];
+  let v = [p.theta0, p.thetaDot0];
 
   for (let i = 1; i <= n; i++) {
     v = rk4(v, step, p);
@@ -91,7 +92,7 @@ function apply() {
     $('error').textContent = '';
 
     // Damping regime of the linearization about the downward equilibrium
-    const ratio = p.mu / (2 * p.m * Math.sqrt(p.g * p.L));
+    const ratio = p.gamma / (2 * p.omega);
     $('regime').textContent =
       ratio === 0 ? 'Undamped'
       : Math.abs(ratio - 1) < 1e-7 ? 'Critical damping (linearized)'
@@ -241,7 +242,7 @@ function draw() {
       for (let j = -8; j <= 8; j++) {
         const y = j * vmax / 8;
         const u = y;
-        const v = -p.mu / (p.m * p.L) * y - p.g / p.L * Math.sin(x);
+        const v = -p.gamma * y - p.omega ** 2 * Math.sin(x);
 
         // Direction in pixel space (screen y points down)
         const U = u * q.w / (xmax - xmin);
@@ -342,7 +343,6 @@ function drawPendulum(theta) {
   ctx.fill();
 
   ctx.font = '12px system-ui';
-  ctx.fillText('L = ' + simulation.p.L + ' m', 10, H - 8);
 }
 
 /* ------------------------------------------------------------------ *
@@ -355,14 +355,17 @@ $('controls').onsubmit = e => {
 
 $('preset').onchange = () => {
   const name = $('preset').value;
-  const critical = Math.sqrt(9.80665);   // critical mu for L = 1, m = .5: mu = 2m*sqrt(gL)
-  const p = { L: 1, m: .5, mu: 0, g: 9.80665, theta0: 1, omega0: 0, duration: 10 };
+  // The original physical example had g = 9.80665, L = 1, m = 0.5,
+  // and mu = sqrt(g): omega = sqrt(g/L), gamma = mu/(mL) = 2*omega.
+  const omega = 3.13156;
+  const criticalGamma = 2 * omega;
+  const p = { omega, gamma: 0, theta0: 1, thetaDot0: 0, duration: 10 };
 
-  if (name === 'original') { p.mu = critical; p.omega0 = 3; }
-  if (name === 'damped') p.mu = .3 * critical;
-  if (name === 'critical') p.mu = critical;
-  if (name === 'overdamped') p.mu = 2 * critical;
-  if (name === 'rotations') { p.theta0 = 0; p.omega0 = 8; }
+  if (name === 'original') { p.gamma = criticalGamma; p.thetaDot0 = 3; }
+  if (name === 'damped') p.gamma = .3 * criticalGamma;
+  if (name === 'critical') p.gamma = criticalGamma;
+  if (name === 'overdamped') p.gamma = 2 * criticalGamma;
+  if (name === 'rotations') { p.theta0 = 0; p.thetaDot0 = 8; }
 
   ids.forEach(id => { $(id).value = p[id]; });
   apply();
@@ -422,7 +425,7 @@ $('phase').onclick = e => {
   }
 
   $('theta0').value = x.toFixed(5);
-  $('omega0').value = y.toFixed(5);
+  $('thetaDot0').value = y.toFixed(5);
   $('preset').value = 'custom';
   apply();
 };

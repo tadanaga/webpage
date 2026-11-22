@@ -320,10 +320,10 @@ permalink: /tools/nonlinear-systems/
         <h2>Define your system</h2>
 
         <label for="f">x′ = f(x,y)</label>
-        <input id="f" type="text" value="y" spellcheck="false" maxlength="200">
+        <input id="f" type="text" value="-3*x+y+2" spellcheck="false" maxlength="200">
 
         <label for="g">y′ = g(x,y)</label>
-        <input id="g" type="text" value="-4*sin(x)" spellcheck="false" maxlength="200">
+        <input id="g" type="text" value="-4*x+2*y+2" spellcheck="false" maxlength="200">
 
         <p class="help">
           Use * for multiplication and ^ for powers. Examples: x*cos(y), 4*x-y.
@@ -333,24 +333,27 @@ permalink: /tools/nonlinear-systems/
 
         <label for="preset">Try a sample portrait</label>
         <select id="preset">
-          <option value="0">Pendulum</option>
-          <option value="1">Saddle and spiral</option>
-          <option value="2">Saddle and node</option>
+          <option value="0">1. Shifted Linear</option>
+          <option value="1">2. Saddle and Node</option>
+          <option value="2">3. Saddle and Spiral</option>
+          <option value="3">4. Competing Species</option>
+          <option value="4">5. Predator-Prey</option>
+          <option value="5">6. Pendulum</option>
           <option value="custom" disabled>Custom system</option>
         </select>
 
         <div class="bounds">
           <div>
             <label for="xmin">x minimum</label>
-            <input id="xmin" type="text" value="-3*pi">
+            <input id="xmin" type="text" value="-3">
           </div>
           <div>
             <label for="xmax">x maximum</label>
-            <input id="xmax" type="text" value="3*pi">
+            <input id="xmax" type="text" value="5">
           </div>
           <div>
             <label for="ymin">y minimum</label>
-            <input id="ymin" type="text" value="-5">
+            <input id="ymin" type="text" value="-3">
           </div>
           <div>
             <label for="ymax">y maximum</label>
@@ -365,7 +368,7 @@ permalink: /tools/nonlinear-systems/
         <input id="duration" type="number" min="1" max="100" value="20">
 
         <label class="check">
-          <input id="piticks" type="checkbox" checked> π ticks on x axis
+          <input id="piticks" type="checkbox"> π ticks on x axis
         </label>
         <label class="check">
           <input id="nullclines" type="checkbox"> Show nullclines
@@ -382,7 +385,7 @@ permalink: /tools/nonlinear-systems/
     <section class="plot">
       <div class="plothead">
         <h2>The phase plane</h2>
-        <span class="badge" id="kind">Pendulum</span>
+        <span class="badge" id="kind">1. Shifted Linear</span>
       </div>
 
       <canvas id="canvas" role="img"

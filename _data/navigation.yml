@@ -18,6 +18,15 @@ main:
 
   - title: "Tools"
     url: /tools/
+    children:
+      - title: "Mathematicians Timeline"
+        url: /timeline/
+      - title: "Linear Systems Explorer"
+        url: /tools/linear-systems/
+      - title: "Nonlinear Systems Explorer"
+        url: /tools/nonlinear-systems/
+      - title: "Pendulum Simulator"
+        url: /tools/pendulum/
 
   - title: "CV"
     url: /files/takahashi_cv.pdf
